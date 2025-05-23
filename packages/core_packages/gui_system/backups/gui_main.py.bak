@@ -1,0 +1,1165 @@
+#!/usr/bin/env python
+# AgentModeGUI - A sophisticated GUI for the GlowingGoldenGlobe Agent Mode
+# This version incorporates modern styling and enhanced functionality for
+# resource monitoring, task scheduling, and improved user experience
+import os
+import sys
+import json
+import datetime
+import subprocess
+import platform
+import shutil
+import tkinter as tk
+from tkinter import ttk, filedialog, messagebox, scrolledtext
+from pathlib import Path
+import threading
+import webbrowser
+import glob
+import re
+import time
+
+# Fix path to find parent directory modules
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Import custom modules
+from gui_styles import GGGStyles
+from hardware_monitor import HardwareMonitor
+from ai_managers.task_manager import TaskManager
+from help_system import HelpSystem
+from refined_model_integration import RefinedModelIntegration
+from auto_refiner_integration import integrate_auto_refiner
+from model_notification_system import get_notification_system, ModelNotificationSystem
+import Objectives_1 as project_objectives
+# Import our GUI enhancements
+from agent_mode_gui_implementation import implement_enhancements as apply_gui_enhancements
+
+class MainGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("GlowingGoldenGlobe User Controls")
+        # Get screen dimensions
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        # Set window size to full height but partial width (70%)
+        window_width = int(screen_width * 0.7)
+        window_height = int(screen_height * 0.9)
+        # Set the geometry
+        self.root.geometry(f"{window_width}x{window_height}")
+        self.root.resizable(True, True)
+        
+        # Try to set custom icon
+        try:
+            icon_path = os.path.join(os.path.dirname(__file__), "gui_icons", "ggg_icon.ico")
+            if os.path.exists(icon_path):
+                self.root.iconbitmap(icon_path)
+        except Exception as e:
+            print(f"Could not set custom icon: {str(e)}")
+            
+        # Initialize styles
+        self.styles = GGGStyles(self.root)
+        # GGGStyles already applies theme in __init__ - no need to call apply_theme()
+        
+        # Initialize variables
+        self.time_limit_hours = tk.StringVar(value="4")
+        self.time_limit_minutes = tk.StringVar(value="0")
+        self.current_version = tk.StringVar()
+        self.resume_version = tk.StringVar()
+        self.blender_file = tk.StringVar()
+        self.simulation_status = tk.StringVar(value="Not started")
+        self.todo_file = tk.StringVar(value="To Do_Daily.txt")
+        self.model_testing_schedule = None
+        
+        # Initialize hardware monitor
+        self.hardware_monitor = HardwareMonitor()
+        
+        # Initialize task manager  
+        self.task_manager = TaskManager()
+        
+        # Initialize refined model integration
+        self.refined_integration = RefinedModelIntegration(self)
+        
+        # Initialize notification system
+        self.notification_system = get_notification_system()
+        
+        # Create main notebook
+        self.notebook = ttk.Notebook(self.root, style='Enhanced.TNotebook')
+        self.notebook.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # Create tabs
+        self.main_tab = ttk.Frame(self.notebook)
+        self.resource_tab = ttk.Frame(self.notebook)
+        self.tasks_tab = ttk.Frame(self.notebook)
+        self.help_tab = ttk.Frame(self.notebook)
+        self.notifications_tab = ttk.Frame(self.notebook)
+        self.auto_refiner_tab = ttk.Frame(self.notebook)
+        
+        self.notebook.add(self.main_tab, text="Main Control")
+        self.notebook.add(self.resource_tab, text="Resource Monitor")
+        self.notebook.add(self.tasks_tab, text="Task Manager")
+        self.notebook.add(self.help_tab, text="Help System")
+        self.notebook.add(self.notifications_tab, text="Notifications")
+        self.notebook.add(self.auto_refiner_tab, text="Auto Refiner")
+        
+        # Apply GUI enhancements
+        apply_gui_enhancements(self)
+        
+        # Setup tabs
+        self.setup_main_tab()
+        self.setup_resource_tab()
+        self.setup_tasks_tab()
+        self.setup_help_tab()
+        self.setup_notifications_tab()
+        self.setup_auto_refiner_tab()
+        
+        # Schedule updates
+        self.schedule_updates()
+        
+        # Load settings
+        self.load_initial_config()
+        
+        # Initialize version list
+        self.update_version_list()
+        
+        # Start hardware monitoring
+        self.hardware_monitor.start_monitoring()
+        
+    def setup_main_tab(self):
+        """Set up the main control tab"""
+        # Create main frame with padding
+        main_frame = ttk.Frame(self.main_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        title_label = ttk.Label(main_frame, text="GlowingGoldenGlobe Agent Control", 
+                               style='Title.TLabel')
+        title_label.pack(pady=(0, 20))
+        
+        # Session control frame
+        session_frame = ttk.LabelFrame(main_frame, text="Session Control", padding="10")
+        session_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # Time limit controls
+        time_frame = ttk.Frame(session_frame)
+        time_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        ttk.Label(time_frame, text="Time Limit:").pack(side=tk.LEFT, padx=(0, 5))
+        ttk.Entry(time_frame, textvariable=self.time_limit_hours, width=5).pack(side=tk.LEFT)
+        ttk.Label(time_frame, text="hours").pack(side=tk.LEFT, padx=(5, 10))
+        ttk.Entry(time_frame, textvariable=self.time_limit_minutes, width=5).pack(side=tk.LEFT)
+        ttk.Label(time_frame, text="minutes").pack(side=tk.LEFT, padx=(5, 0))
+        
+        # Button frame
+        button_frame = ttk.Frame(session_frame)
+        button_frame.pack(fill=tk.X)
+        
+        ttk.Button(button_frame, text="Start New Session", 
+                  command=self.start_new_session,
+                  style='Primary.TButton').pack(side=tk.LEFT, padx=(0, 5))
+        ttk.Button(button_frame, text="Resume Previous", 
+                  command=self.resume_previous_session,
+                  style='Secondary.TButton').pack(side=tk.LEFT)
+        
+        # Model version frame
+        version_frame = ttk.LabelFrame(main_frame, text="Model Versions", padding="10")
+        version_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        # Version status display
+        self.version_listbox = tk.Listbox(version_frame, height=8)
+        self.version_listbox.pack(fill=tk.BOTH, expand=True)
+        
+        # Action buttons
+        action_frame = ttk.LabelFrame(main_frame, text="Actions", padding="10")
+        action_frame.pack(fill=tk.X)
+        
+        action_buttons = [
+            ("Open in Blender", self.open_in_blender),
+            ("Run Simulation", self.run_simulation),
+            ("View in O3DE", self.view_in_o3de),
+            ("View Log", self.view_log),
+            ("Show To-Do List", self.show_todo_list),
+        ]
+        
+        for i, (text, command) in enumerate(action_buttons):
+            row = i // 3
+            col = i % 3
+            btn = ttk.Button(action_frame, text=text, command=command)
+            btn.grid(row=row, column=col, padx=5, pady=5, sticky=tk.W+tk.E)
+            
+        # Configure grid weights
+        for i in range(3):
+            action_frame.columnconfigure(i, weight=1)
+    
+    def load_initial_config(self):
+        """Load saved configuration"""
+        config_file = os.path.join(os.path.dirname(__file__), "agent_mode_config.json")
+        if os.path.exists(config_file):
+            try:
+                with open(config_file, 'r') as f:
+                    config = json.load(f)
+                    self.time_limit_hours.set(config.get("time_limit_hours", "4"))
+                    self.time_limit_minutes.set(config.get("time_limit_minutes", "0"))
+                    self.todo_file.set(config.get("todo_file", "To Do_Daily.txt"))
+            except Exception as e:
+                print(f"Could not load config: {str(e)}")
+    
+    def save_settings(self):
+        """Save current settings"""
+        config = {
+            "time_limit_hours": self.time_limit_hours.get(),
+            "time_limit_minutes": self.time_limit_minutes.get(),
+            "todo_file": self.todo_file.get(),
+            "last_session": datetime.datetime.now().isoformat()
+        }
+        
+        config_file = os.path.join(os.path.dirname(__file__), "agent_mode_config.json")
+        try:
+            with open(config_file, 'w') as f:
+                json.dump(config, f, indent=4)
+        except Exception as e:
+            print(f"Could not save config: {str(e)}")
+    
+    def get_available_versions(self):
+        """Get list of available model versions from project history"""
+        versions = []
+        # Check for version files in various locations
+        patterns = [
+            "micro_robot_composite_part_v*.json",
+            "AI_Agent_1/micro_robot_composite_part_v*.json", 
+            "model_versions/v*/micro_robot_composite_part_v*.json"
+        ]
+        
+        for pattern in patterns:
+            for file in glob.glob(pattern):
+                # Extract version number from filename
+                match = re.search(r'_v(\d+)\.', file)
+                if match:
+                    versions.append(int(match.group(1)))
+        
+        return sorted(list(set(versions)))
+    
+    def update_version_list(self):
+        """Update the version list display"""
+        self.version_listbox.delete(0, tk.END)
+        
+        versions = self.get_available_versions()
+        for version in versions:
+            status = self.check_model_status(version)
+            display_text = f"Version {version}: {status}"
+            self.version_listbox.insert(tk.END, display_text)
+    
+    def check_model_status(self, version):
+        """Check the development status of a model version"""
+        # Check various status indicators
+        status_files = [
+            f"requirements_met_v{version}.flag",
+            f"simulation_complete_v{version}.flag",
+            f"AI_Agent_1/version_v{version}_*.flag",
+        ]
+        
+        for status_file in status_files:
+            if glob.glob(status_file):
+                return "Complete"
+        
+        # Check if work in progress
+        progress_files = [
+            f"micro_robot_composite_part_v{version}.blend",
+            f"AI_Agent_1/task_{version}_*.blend"
+        ]
+        
+        for progress_file in progress_files:
+            if glob.glob(progress_file):
+                return "In Progress"
+                
+        return "Not Started"
+    
+    def start_new_session(self):
+        """Start a new development session"""
+        try:
+            # Validate inputs
+            time_limit_hours = float(self.time_limit_hours.get())
+            time_limit_minutes = int(self.time_limit_minutes.get())
+            
+            if time_limit_hours < 0 or time_limit_minutes < 0:
+                messagebox.showerror("Invalid Input", "Time limit must be positive")
+                return
+                
+            # Calculate total seconds
+            total_seconds = int(time_limit_hours * 3600 + time_limit_minutes * 60)
+            
+            # Save settings
+            self.save_settings()
+            
+            # Prepare command
+            cmd = [
+                sys.executable,
+                "AI_Agent_1/Agent1_Part1.py",
+                "--time-limit", str(total_seconds),
+                "--version", str(len(self.get_available_versions()) + 1)
+            ]
+            
+            # Check if we should use enhanced physics
+            if hasattr(self, 'use_enhanced_physics') and self.use_enhanced_physics.get():
+                cmd.append("--enhanced-physics")
+            
+            # Run command
+            threading.Thread(target=self.run_command, args=(cmd,), daemon=True).start()
+            
+            messagebox.showinfo("Session Started", "New development session started!")
+            
+        except ValueError:
+            messagebox.showerror("Invalid Input", "Please enter valid numbers for time limit")
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to start session: {str(e)}")
+    
+    def resume_previous_session(self):
+        """Resume a previous development session"""
+        try:
+            versions = self.get_available_versions()
+            if not versions:
+                messagebox.showinfo("No Sessions", "No previous sessions found to resume")
+                return
+                
+            # Find the most recent incomplete session
+            incomplete_version = None
+            for version in reversed(versions):
+                if self.check_model_status(version) == "In Progress":
+                    incomplete_version = version
+                    break
+                    
+            if incomplete_version is None:
+                messagebox.showinfo("No Incomplete Sessions", 
+                                   "All previous sessions are complete. Start a new session instead.")
+                return
+                
+            # Resume the incomplete session
+            cmd = [
+                sys.executable,
+                "AI_Agent_1/Agent1_Part1.py",
+                "--resume",
+                "--version", str(incomplete_version)
+            ]
+            
+            threading.Thread(target=self.run_command, args=(cmd,), daemon=True).start()
+            
+            messagebox.showinfo("Session Resumed", 
+                               f"Resumed development session for Version {incomplete_version}")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to resume session: {str(e)}")
+    
+    def run_command(self, cmd):
+        """Run a command in a separate thread"""
+        try:
+            # Create process
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                bufsize=1,
+                universal_newlines=True
+            )
+            
+            # Store process for potential stopping
+            self.current_process = process
+            
+            # Read output in real-time
+            while True:
+                output = process.stdout.readline()
+                if output == '' and process.poll() is not None:
+                    break
+                if output:
+                    print(output.strip())
+                    
+            # Get final return code
+            return_code = process.poll()
+            if return_code != 0:
+                error_output = process.stderr.read()
+                if error_output:
+                    print(f"Error: {error_output}")
+                    
+        except Exception as e:
+            print(f"Command execution error: {str(e)}")
+    
+    def open_in_blender(self):
+        """Open the current model in Blender"""
+        try:
+            # Get selected version
+            selection = self.version_listbox.curselection()
+            if not selection:
+                messagebox.showwarning("No Selection", "Please select a model version")
+                return
+                
+            # Extract version number from selection
+            selected_text = self.version_listbox.get(selection[0])
+            version = int(selected_text.split()[1].rstrip(':'))
+            
+            # Find Blender file
+            blend_files = glob.glob(f"**/micro_robot_*_v{version}.blend", recursive=True)
+            if not blend_files:
+                messagebox.showerror("File Not Found", 
+                                    f"No Blender file found for version {version}")
+                return
+                
+            # Open in Blender
+            if platform.system() == "Windows":
+                # Try to find Blender in common locations
+                blender_paths = [
+                    r"C:\\Program Files\\Blender Foundation\\Blender 3.6\\blender.exe",
+                    r"C:\\Program Files\\Blender Foundation\\Blender\\blender.exe",
+                    r"C:\\Program Files\\Blender Foundation\\Blender 3.5\\blender.exe",
+                ]
+                
+                blender_exe = None
+                for path in blender_paths:
+                    if os.path.exists(path):
+                        blender_exe = path
+                        break
+                        
+                if blender_exe:
+                    subprocess.Popen([blender_exe, blend_files[0]])
+                else:
+                    # Try to use system association
+                    os.startfile(blend_files[0])
+            else:
+                # On Linux/Mac, try to use blender command
+                subprocess.Popen(["blender", blend_files[0]])
+                
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to open in Blender: {str(e)}")
+    
+    def run_simulation(self):
+        """Run physics simulation for the selected model"""
+        try:
+            # Get selected version
+            selection = self.version_listbox.curselection()
+            if not selection:
+                messagebox.showwarning("No Selection", "Please select a model version")
+                return
+                
+            # Extract version number
+            selected_text = self.version_listbox.get(selection[0])
+            version = int(selected_text.split()[1].rstrip(':'))
+            
+            # Check if enhanced physics is available
+            enhanced_physics_available = os.path.exists("AI_Agent_1/advanced_physics_simulation.py")
+            
+            if enhanced_physics_available and hasattr(self, 'use_enhanced_physics') and self.use_enhanced_physics.get():
+                # Run enhanced physics simulation
+                cmd = [
+                    sys.executable,
+                    "AI_Agent_1/run_advanced_simulation.py",
+                    "--version", str(version)
+                ]
+            else:
+                # Run standard simulation
+                cmd = [
+                    sys.executable,
+                    "AI_Agent_1/Agent1_Part1.py",
+                    "--simulate-only",
+                    "--version", str(version)
+                ]
+            
+            def wait_and_flag():
+                """Wait for simulation completion and create flag file"""
+                process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                stdout, stderr = process.communicate()
+                
+                if process.returncode == 0:
+                    # Create completion flag
+                    flag_file = f"simulation_complete_v{version}.flag"
+                    with open(flag_file, 'w') as f:
+                        f.write(f"Simulation completed at {datetime.datetime.now()}")
+                    
+                    self.root.after(0, lambda: messagebox.showinfo("Simulation Complete", 
+                                        f"Simulation for version {version} completed successfully!"))
+                else:
+                    error_msg = stderr.decode() if stderr else "Unknown error"
+                    self.root.after(0, lambda: messagebox.showerror("Simulation Failed", 
+                                        f"Simulation failed: {error_msg}"))
+                
+                # Update version list in GUI
+                self.root.after(0, self.update_version_list)
+            
+            # Run simulation in background thread
+            threading.Thread(target=wait_and_flag, daemon=True).start()
+            
+            messagebox.showinfo("Simulation Started", 
+                               f"Running simulation for version {version}...")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to run simulation: {str(e)}")
+    
+    def view_in_o3de(self):
+        """View the model in O3DE"""
+        try:
+            # Get selected version
+            selection = self.version_listbox.curselection()
+            if not selection:
+                messagebox.showwarning("No Selection", "Please select a model version")
+                return
+                
+            # Extract version number
+            selected_text = self.version_listbox.get(selection[0])
+            version = int(selected_text.split()[1].rstrip(':'))
+            
+            # Find exported model files
+            model_files = glob.glob(f"**/micro_robot_*_v{version}.fbx", recursive=True)
+            if not model_files:
+                messagebox.showinfo("Export Required", 
+                                   "Model needs to be exported to FBX format first")
+                # TODO: Add export functionality
+                return
+                
+            # Launch O3DE viewer (this would need to be configured for the specific setup)
+            messagebox.showinfo("O3DE Integration", 
+                               "O3DE integration is not yet configured.\n" +
+                               f"Model file: {model_files[0]}")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to view in O3DE: {str(e)}")
+    
+    def view_log(self):
+        """View the development log"""
+        try:
+            log_files = [
+                "AI_Agent_1/model_development_log.md",
+                "model_development_log.txt",
+                "development_log.txt"
+            ]
+            
+            log_file = None
+            for file in log_files:
+                if os.path.exists(file):
+                    log_file = file
+                    break
+                    
+            if not log_file:
+                messagebox.showinfo("No Log Found", "No development log file found")
+                return
+                
+            # Create log viewer window
+            log_window = tk.Toplevel(self.root)
+            log_window.title("Development Log")
+            log_window.geometry("800x600")
+            
+            # Create text widget with scrollbar
+            text_frame = ttk.Frame(log_window)
+            text_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+            
+            text_widget = scrolledtext.ScrolledText(text_frame, wrap=tk.WORD)
+            text_widget.pack(fill=tk.BOTH, expand=True)
+            
+            # Load log content
+            with open(log_file, 'r') as f:
+                content = f.read()
+                text_widget.insert(1.0, content)
+                
+            # Make read-only
+            text_widget.config(state=tk.DISABLED)
+            
+            # Add close button
+            ttk.Button(log_window, text="Close", 
+                      command=log_window.destroy).pack(pady=10)
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to view log: {str(e)}")
+    
+    def show_todo_list(self):
+        """Show the to-do list"""
+        try:
+            todo_file = self.todo_file.get()
+            if not os.path.exists(todo_file):
+                messagebox.showinfo("No To-Do List", f"To-do file '{todo_file}' not found")
+                return
+                
+            # Create todo window
+            todo_window = tk.Toplevel(self.root)
+            todo_window.title("To-Do List")
+            todo_window.geometry("600x500")
+            
+            # Create text widget
+            text_frame = ttk.Frame(todo_window)
+            text_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+            
+            text_widget = scrolledtext.ScrolledText(text_frame, wrap=tk.WORD)
+            text_widget.pack(fill=tk.BOTH, expand=True)
+            
+            # Load content
+            with open(todo_file, 'r') as f:
+                content = f.read()
+                text_widget.insert(1.0, content)
+                
+            # Add save functionality
+            def save_todo():
+                content = text_widget.get(1.0, tk.END)
+                with open(todo_file, 'w') as f:
+                    f.write(content.strip())
+                messagebox.showinfo("Saved", "To-do list saved successfully")
+                
+            # Add buttons
+            button_frame = ttk.Frame(todo_window)
+            button_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
+            
+            ttk.Button(button_frame, text="Save", command=save_todo).pack(side=tk.LEFT, padx=5)
+            ttk.Button(button_frame, text="Close", command=todo_window.destroy).pack(side=tk.LEFT)
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to show to-do list: {str(e)}")
+    
+    def setup_resource_tab(self):
+        """Set up the resource monitor tab"""
+        # Create main frame
+        main_frame = ttk.Frame(self.resource_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        ttk.Label(main_frame, text="System Resource Monitor", 
+                 style='Title.TLabel').pack(pady=(0, 20))
+        
+        # Create resource display
+        resource_frame = ttk.LabelFrame(main_frame, text="Current Usage", padding="10")
+        resource_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # CPU usage
+        self.cpu_label = ttk.Label(resource_frame, text="CPU: 0%")
+        self.cpu_label.pack(anchor=tk.W, pady=5)
+        
+        self.cpu_progress = ttk.Progressbar(resource_frame, length=400, mode='determinate')
+        self.cpu_progress.pack(fill=tk.X, pady=(0, 10))
+        
+        # Memory usage
+        self.memory_label = ttk.Label(resource_frame, text="Memory: 0%")
+        self.memory_label.pack(anchor=tk.W, pady=5)
+        
+        self.memory_progress = ttk.Progressbar(resource_frame, length=400, mode='determinate')
+        self.memory_progress.pack(fill=tk.X, pady=(0, 10))
+        
+        # Disk usage
+        self.disk_label = ttk.Label(resource_frame, text="Disk: 0%")
+        self.disk_label.pack(anchor=tk.W, pady=5)
+        
+        self.disk_progress = ttk.Progressbar(resource_frame, length=400, mode='determinate')
+        self.disk_progress.pack(fill=tk.X, pady=(0, 10))
+        
+        # History chart placeholder
+        history_frame = ttk.LabelFrame(main_frame, text="Usage History", padding="10")
+        history_frame.pack(fill=tk.BOTH, expand=True, pady=(10, 0))
+        
+        ttk.Label(history_frame, text="[Resource usage chart will be displayed here]").pack()
+        
+        # Start monitoring
+        self.update_resource_display()
+    
+    def update_resource_display(self):
+        """Update resource usage display"""
+        try:
+            usage = self.hardware_monitor.get_current_usage()
+            
+            # Update CPU
+            cpu_percent = usage.get('cpu_percent', 0)
+            self.cpu_label.config(text=f"CPU: {cpu_percent:.1f}%")
+            self.cpu_progress['value'] = cpu_percent
+            
+            # Update Memory
+            memory_percent = usage.get('memory_percent', 0)
+            self.memory_label.config(text=f"Memory: {memory_percent:.1f}%")
+            self.memory_progress['value'] = memory_percent
+            
+            # Update Disk
+            disk_percent = usage.get('disk_percent', 0)
+            self.disk_label.config(text=f"Disk: {disk_percent:.1f}%")
+            self.disk_progress['value'] = disk_percent
+            
+        except Exception as e:
+            print(f"Error updating resource display: {str(e)}")
+        
+        # Schedule next update
+        self.root.after(2000, self.update_resource_display)  # Update every 2 seconds
+    
+    def setup_tasks_tab(self):
+        """Set up the task manager tab"""
+        # Create main frame
+        main_frame = ttk.Frame(self.tasks_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        ttk.Label(main_frame, text="Task Manager", style='Title.TLabel').pack(pady=(0, 20))
+        
+        # Task list
+        task_frame = ttk.LabelFrame(main_frame, text="Current Tasks", padding="10")
+        task_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Create treeview for tasks
+        self.task_tree = ttk.Treeview(task_frame, columns=('Status', 'Priority', 'Created'), 
+                                     show='tree headings')
+        self.task_tree.heading('#0', text='Task')
+        self.task_tree.heading('Status', text='Status')
+        self.task_tree.heading('Priority', text='Priority')
+        self.task_tree.heading('Created', text='Created')
+        
+        # Configure column widths
+        self.task_tree.column('#0', width=300)
+        self.task_tree.column('Status', width=100)
+        self.task_tree.column('Priority', width=100)
+        self.task_tree.column('Created', width=150)
+        
+        self.task_tree.pack(fill=tk.BOTH, expand=True)
+        
+        # Task control buttons
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        ttk.Button(button_frame, text="Add Task", command=self.add_task).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Edit Task", command=self.edit_task).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Delete Task", command=self.delete_task).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Mark Complete", command=self.complete_task).pack(side=tk.LEFT, padx=5)
+        
+        # Load tasks
+        self.refresh_task_list()
+    
+    def refresh_task_list(self):
+        """Refresh the task list display"""
+        # Clear existing items
+        for item in self.task_tree.get_children():
+            self.task_tree.delete(item)
+        
+        # Load tasks
+        tasks = self.task_manager.get_all_tasks()
+        for task in tasks:
+            self.task_tree.insert('', 'end', 
+                                 text=task.get('description', 'Unnamed task'),
+                                 values=(task.get('status', 'pending'),
+                                        task.get('priority', 'medium'),
+                                        task.get('created_at', '')))
+    
+    def add_task(self):
+        """Add a new task"""
+        # Create task dialog
+        dialog = tk.Toplevel(self.root)
+        dialog.title("Add New Task")
+        dialog.geometry("400x300")
+        
+        # Task description
+        ttk.Label(dialog, text="Description:").pack(anchor=tk.W, padx=10, pady=(10, 5))
+        desc_text = tk.Text(dialog, height=5, width=50)
+        desc_text.pack(padx=10, pady=(0, 10))
+        
+        # Priority
+        ttk.Label(dialog, text="Priority:").pack(anchor=tk.W, padx=10, pady=(0, 5))
+        priority_var = tk.StringVar(value="medium")
+        priority_combo = ttk.Combobox(dialog, textvariable=priority_var, 
+                                     values=["low", "medium", "high"])
+        priority_combo.pack(padx=10, pady=(0, 10))
+        
+        # Save function
+        def save_task():
+            description = desc_text.get(1.0, tk.END).strip()
+            if description:
+                task_data = {
+                    'description': description,
+                    'priority': priority_var.get(),
+                    'status': 'pending',
+                    'created_at': datetime.datetime.now().isoformat()
+                }
+                self.task_manager.add_task(task_data)
+                self.refresh_task_list()
+                dialog.destroy()
+            else:
+                messagebox.showwarning("Invalid Input", "Description cannot be empty")
+        
+        # Buttons
+        button_frame = ttk.Frame(dialog)
+        button_frame.pack(pady=10)
+        
+        ttk.Button(button_frame, text="Save", command=save_task).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Cancel", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
+    
+    def edit_task(self):
+        """Edit selected task"""
+        selection = self.task_tree.selection()
+        if not selection:
+            messagebox.showwarning("No Selection", "Please select a task to edit")
+            return
+        
+        # Get task data
+        item = selection[0]
+        task_text = self.task_tree.item(item)['text']
+        values = self.task_tree.item(item)['values']
+        
+        # Create edit dialog (similar to add_task but pre-filled)
+        # Implementation similar to add_task but with pre-filled values
+        messagebox.showinfo("Edit Task", f"Editing: {task_text}")
+    
+    def delete_task(self):
+        """Delete selected task"""
+        selection = self.task_tree.selection()
+        if not selection:
+            messagebox.showwarning("No Selection", "Please select a task to delete")
+            return
+        
+        if messagebox.askyesno("Confirm Delete", "Are you sure you want to delete this task?"):
+            # Delete from tree and task manager
+            item = selection[0]
+            self.task_tree.delete(item)
+            # Note: Would need to implement task ID tracking for proper deletion
+    
+    def complete_task(self):
+        """Mark selected task as complete"""
+        selection = self.task_tree.selection()
+        if not selection:
+            messagebox.showwarning("No Selection", "Please select a task to complete")
+            return
+        
+        item = selection[0]
+        # Update task status
+        self.task_tree.set(item, 'Status', 'completed')
+        # Note: Would need to update task manager as well
+    
+    def setup_help_tab(self):
+        """Set up the help system tab"""
+        # Create main frame
+        main_frame = ttk.Frame(self.help_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        ttk.Label(main_frame, text="Help & Documentation", 
+                 style='Title.TLabel').pack(pady=(0, 20))
+        
+        # Create help categories
+        help_frame = ttk.Frame(main_frame)
+        help_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Category list
+        category_frame = ttk.LabelFrame(help_frame, text="Categories", padding="10")
+        category_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, 10))
+        
+        self.help_listbox = tk.Listbox(category_frame, width=30)
+        self.help_listbox.pack(fill=tk.BOTH, expand=True)
+        
+        # Help content
+        content_frame = ttk.LabelFrame(help_frame, text="Content", padding="10")
+        content_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        self.help_text = scrolledtext.ScrolledText(content_frame, wrap=tk.WORD)
+        self.help_text.pack(fill=tk.BOTH, expand=True)
+        
+        # Load help topics
+        self.load_help_topics()
+        
+        # Bind selection event
+        self.help_listbox.bind('<<ListboxSelect>>', self.show_help_content)
+    
+    def load_help_topics(self):
+        """Load available help topics"""
+        help_topics = [
+            "Getting Started",
+            "User Interface Guide",
+            "Model Development",
+            "Simulation Guide",
+            "Task Management",
+            "Resource Monitoring",
+            "Advanced Features",
+            "Troubleshooting",
+            "FAQ"
+        ]
+        
+        for topic in help_topics:
+            self.help_listbox.insert(tk.END, topic)
+    
+    def show_help_content(self, event):
+        """Show help content for selected topic"""
+        selection = self.help_listbox.curselection()
+        if not selection:
+            return
+            
+        topic = self.help_listbox.get(selection[0])
+        
+        # Load help content (this would typically load from files)
+        help_content = {
+            "Getting Started": """
+# Getting Started with GlowingGoldenGlobe
+
+Welcome to the GlowingGoldenGlobe Agent Control System!
+
+## Quick Start
+
+1. Set your desired time limit using the hours and minutes fields
+2. Click "Start New Session" to begin a new model development session
+3. Monitor progress in the Model Versions list
+4. Use the action buttons to interact with your models
+
+## Basic Workflow
+
+1. **Starting a Session**: Configure time limits and click "Start New Session"
+2. **Monitoring Progress**: Watch the version list for status updates
+3. **Viewing Results**: Use "Open in Blender" or "View Log" to see outputs
+4. **Running Simulations**: Select a version and click "Run Simulation"
+
+## Tips
+
+- Use shorter time limits for testing
+- Check the resource monitor to ensure optimal performance
+- Review logs regularly to track progress
+""",
+            "User Interface Guide": """
+# User Interface Guide
+
+The GlowingGoldenGlobe GUI consists of several main components:
+
+## Main Control Tab
+- Session management controls
+- Model version list
+- Action buttons for common operations
+
+## Resource Monitor Tab
+- Real-time CPU usage
+- Memory consumption tracking
+- Disk usage monitoring
+- Historical usage charts
+
+## Task Manager Tab
+- Current task list
+- Task priority management
+- Task completion tracking
+
+## Help System Tab
+- Comprehensive documentation
+- Troubleshooting guides
+- FAQ section
+
+## Notifications Tab
+- System messages
+- Model completion alerts
+- Error notifications
+"""
+        }
+        
+        # Clear and update content
+        self.help_text.delete(1.0, tk.END)
+        content = help_content.get(topic, f"Help content for '{topic}' coming soon...")
+        self.help_text.insert(1.0, content)
+    
+    def setup_notifications_tab(self):
+        """Set up the notifications tab"""
+        # Create main frame
+        main_frame = ttk.Frame(self.notifications_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        ttk.Label(main_frame, text="System Notifications", 
+                 style='Title.TLabel').pack(pady=(0, 20))
+        
+        # Notification list
+        notif_frame = ttk.LabelFrame(main_frame, text="Recent Notifications", padding="10")
+        notif_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Create treeview for notifications
+        self.notif_tree = ttk.Treeview(notif_frame, columns=('Time', 'Type'), 
+                                      show='tree headings')
+        self.notif_tree.heading('#0', text='Message')
+        self.notif_tree.heading('Time', text='Time')
+        self.notif_tree.heading('Type', text='Type')
+        
+        self.notif_tree.column('#0', width=400)
+        self.notif_tree.column('Time', width=150)
+        self.notif_tree.column('Type', width=100)
+        
+        self.notif_tree.pack(fill=tk.BOTH, expand=True)
+        
+        # Control buttons
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        ttk.Button(button_frame, text="Clear All", 
+                  command=self.clear_notifications).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Export Log", 
+                  command=self.export_notifications).pack(side=tk.LEFT, padx=5)
+        
+        # Load existing notifications
+        self.refresh_notifications()
+    
+    def refresh_notifications(self):
+        """Refresh the notification list"""
+        # Clear existing items
+        for item in self.notif_tree.get_children():
+            self.notif_tree.delete(item)
+        
+        # Get notifications from the notification system
+        notifications = self.notification_system.get_notifications()
+        
+        for notif in notifications:
+            self.notif_tree.insert('', 'end',
+                                  text=notif.get('message', ''),
+                                  values=(notif.get('timestamp', ''),
+                                         notif.get('type', 'info')))
+    
+    def clear_notifications(self):
+        """Clear all notifications"""
+        if messagebox.askyesno("Clear Notifications", 
+                              "Are you sure you want to clear all notifications?"):
+            self.notification_system.clear_notifications()
+            self.refresh_notifications()
+    
+    def export_notifications(self):
+        """Export notifications to a file"""
+        filename = filedialog.asksaveasfilename(
+            defaultextension=".txt",
+            filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
+        )
+        
+        if filename:
+            try:
+                notifications = self.notification_system.get_notifications()
+                with open(filename, 'w') as f:
+                    for notif in notifications:
+                        f.write(f"{notif.get('timestamp', '')} - {notif.get('type', '')}: "
+                               f"{notif.get('message', '')}\n")
+                messagebox.showinfo("Export Complete", "Notifications exported successfully")
+            except Exception as e:
+                messagebox.showerror("Export Error", f"Failed to export: {str(e)}")
+    
+    def setup_auto_refiner_tab(self):
+        """Set up the auto refiner tab"""
+        # Create main frame
+        main_frame = ttk.Frame(self.auto_refiner_tab, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        ttk.Label(main_frame, text="Automated Model Refinement", 
+                 style='Title.TLabel').pack(pady=(0, 20))
+        
+        # Status frame
+        status_frame = ttk.LabelFrame(main_frame, text="Refinement Status", padding="10")
+        status_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        self.refiner_status_label = ttk.Label(status_frame, text="Status: Idle")
+        self.refiner_status_label.pack(anchor=tk.W)
+        
+        self.refiner_progress = ttk.Progressbar(status_frame, mode='indeterminate')
+        self.refiner_progress.pack(fill=tk.X, pady=(10, 0))
+        
+        # Configuration frame
+        config_frame = ttk.LabelFrame(main_frame, text="Configuration", padding="10")
+        config_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # Auto-refine settings
+        self.auto_refine_enabled = tk.BooleanVar(value=False)
+        ttk.Checkbutton(config_frame, text="Enable Auto-Refinement", 
+                       variable=self.auto_refine_enabled).pack(anchor=tk.W)
+        
+        self.refine_threshold = tk.StringVar(value="0.8")
+        threshold_frame = ttk.Frame(config_frame)
+        threshold_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        ttk.Label(threshold_frame, text="Quality Threshold:").pack(side=tk.LEFT)
+        ttk.Entry(threshold_frame, textvariable=self.refine_threshold, 
+                 width=10).pack(side=tk.LEFT, padx=(5, 0))
+        
+        # Manual refinement controls
+        manual_frame = ttk.LabelFrame(main_frame, text="Manual Refinement", padding="10")
+        manual_frame.pack(fill=tk.X)
+        
+        ttk.Button(manual_frame, text="Start Refinement", 
+                  command=self.start_refinement).pack(side=tk.LEFT, padx=5)
+        ttk.Button(manual_frame, text="Stop Refinement", 
+                  command=self.stop_refinement).pack(side=tk.LEFT, padx=5)
+        ttk.Button(manual_frame, text="View Report", 
+                  command=self.view_refinement_report).pack(side=tk.LEFT, padx=5)
+    
+    def start_refinement(self):
+        """Start the model refinement process"""
+        self.refiner_status_label.config(text="Status: Running")
+        self.refiner_progress.start()
+        
+        # Start refinement in background thread
+        threading.Thread(target=self._run_refinement, daemon=True).start()
+    
+    def _run_refinement(self):
+        """Run the actual refinement process"""
+        try:
+            # Get selected version
+            selection = self.version_listbox.curselection()
+            if selection:
+                selected_text = self.version_listbox.get(selection[0])
+                version = int(selected_text.split()[1].rstrip(':'))
+                
+                # Run refinement
+                integrate_auto_refiner(version, float(self.refine_threshold.get()))
+                
+                # Update UI
+                self.root.after(0, self._refinement_complete)
+            else:
+                self.root.after(0, lambda: messagebox.showwarning("No Selection", 
+                                        "Please select a model version to refine"))
+                self.root.after(0, self._refinement_complete)
+        except Exception as e:
+            self.root.after(0, lambda: messagebox.showerror("Refinement Error", 
+                                    f"Refinement failed: {str(e)}"))
+            self.root.after(0, self._refinement_complete)
+    
+    def _refinement_complete(self):
+        """Update UI when refinement is complete"""
+        self.refiner_status_label.config(text="Status: Idle")
+        self.refiner_progress.stop()
+        self.update_version_list()
+    
+    def stop_refinement(self):
+        """Stop the refinement process"""
+        # This would need to implement actual stopping logic
+        self.refiner_status_label.config(text="Status: Stopped")
+        self.refiner_progress.stop()
+    
+    def view_refinement_report(self):
+        """View the refinement report"""
+        # Create report window
+        report_window = tk.Toplevel(self.root)
+        report_window.title("Refinement Report")
+        report_window.geometry("600x400")
+        
+        # Create text widget
+        text_widget = scrolledtext.ScrolledText(report_window, wrap=tk.WORD)
+        text_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # Load report content
+        report_files = glob.glob("refined_model_report_*.txt")
+        if report_files:
+            # Get most recent report
+            latest_report = max(report_files, key=os.path.getmtime)
+            
+            with open(latest_report, 'r') as f:
+                content = f.read()
+                text_widget.insert(1.0, content)
+        else:
+            text_widget.insert(1.0, "No refinement reports available yet.")
+        
+        text_widget.config(state=tk.DISABLED)
+        
+        # Add close button
+        ttk.Button(report_window, text="Close", 
+                  command=report_window.destroy).pack(pady=10)
+    
+    def schedule_updates(self):
+        """Schedule periodic updates for various displays"""
+        # Update resource monitor every 2 seconds (already handled in setup_resource_tab)
+        
+        # Update version list every 30 seconds
+        def update_versions():
+            self.update_version_list()
+            self.root.after(30000, update_versions)
+        self.root.after(30000, update_versions)
+        
+        # Update notifications every 10 seconds
+        def update_notifications():
+            self.refresh_notifications()
+            self.root.after(10000, update_notifications)
+        self.root.after(10000, update_notifications)
+
+def main():
+    """Main entry point"""
+    root = tk.Tk()
+    app = MainGUI(root)
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()

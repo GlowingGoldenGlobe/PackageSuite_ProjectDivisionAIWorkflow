@@ -1,0 +1,183 @@
+{
+  "timestamp": "2025-05-20T14:30:00.000000",
+  "role": "general",
+  "project_status": {
+    "development_mode": "refined_model",
+    "execution_style": "parallel",
+    "environment": "Windows native",
+    "last_updated": "## Last Updated",
+    "configuration_section": true
+  },
+  "recent_changes": [
+    {
+      "file": "ai_managers/AUTOMATION_GUIDELINES.md",
+      "modified": "2025-05-20T14:30:00.000000",
+      "type": "markdown"
+    },
+    {
+      "file": "ai_managers/ai_roles_context_builder.py",
+      "modified": "2025-05-17T14:10:19.683005",
+      "type": "python"
+    },
+    {
+      "file": "gui/gui_main.py",
+      "modified": "2025-05-17T14:09:44.858011",
+      "type": "python"
+    },
+    {
+      "file": "agent_mode_gui_enhanced.py",
+      "modified": "2025-05-17T14:05:21.386725",
+      "type": "python"
+    },
+    {
+      "file": "AI_Agent_1/Agent1_Part1_blender_fast.py",
+      "modified": "2025-05-17T13:45:38.445776",
+      "type": "python"
+    },
+    {
+      "file": "AI_Agent_1/run_blender_simulation.py",
+      "modified": "2025-05-17T13:43:47.839175",
+      "type": "python"
+    },
+    {
+      "file": "AI_Agent_1/test_simple_physics.py",
+      "modified": "2025-05-17T13:43:35.126656",
+      "type": "python"
+    },
+    {
+      "file": "AI_Agent_1/Agent1_Part1_blender.py",
+      "modified": "2025-05-17T13:32:34.099024",
+      "type": "python"
+    },
+    {
+      "file": "gui/gui_launcher.py",
+      "modified": "2025-05-17T13:25:38.489417",
+      "type": "python"
+    },
+    {
+      "file": "gui/gui_enhanced.py",
+      "modified": "2025-05-17T13:08:25.892378",
+      "type": "python"
+    }
+  ],
+  "active_tasks": [],
+  "critical_files": {
+    "common": [
+      "PROJECT_STARTUP_SUMMARY.md",
+      "README.md",
+      "Objectives_1.py",
+      "Procedure_1.py"
+    ],
+    "guidelines": [
+      "ai_managers/README.md",
+      "docs/duplicate_file_prevention_task.md"
+    ]
+  },
+  "agent_status": {
+    "AI_Agent_1": {
+      "exists": true,
+      "has_readme": true,
+      "has_main_script": false,
+      "recent_activity": true
+    },
+    "AI_Agent_2": {
+      "exists": true,
+      "has_readme": false,
+      "has_main_script": false,
+      "recent_activity": false
+    },
+    "AI_Agent_3": {
+      "exists": true,
+      "has_readme": false,
+      "has_main_script": false,
+      "recent_activity": false
+    },
+    "AI_Agent_4": {
+      "exists": true,
+      "has_readme": false,
+      "has_main_script": false,
+      "recent_activity": false
+    },
+    "AI_Agent_5": {
+      "exists": true,
+      "has_readme": false,
+      "has_main_script": false,
+      "recent_activity": false
+    },
+    "AI_Agent_6": {
+      "exists": false
+    },
+    "AI_Agent_7": {
+      "exists": false
+    },
+    "AI_Agent_8": {
+      "exists": false
+    },
+    "AI_Agent_9": {
+      "exists": false
+    },
+    "AI_Agent_10": {
+      "exists": false
+    },
+    "AI_Agent_11": {
+      "exists": false
+    },
+    "AI_Agent_12": {
+      "exists": false
+    },
+    "AI_Agent_13": {
+      "exists": false
+    },
+    "AI_Agent_14": {
+      "exists": false
+    }
+  },
+  "documentation_index": {
+    "readme_files": [
+      "README.md",
+      "README_GitHub.md",
+      "README_GitHub_MergeHandler.md",
+      "README_GUI_ENHANCEMENTS.md",
+      "README_MERGE_HANDLER.md",
+      "README_MODULAR.md",
+      "AI_Agent_1/README.md",
+      "AI_Agent_1/README_MODULAR.md",
+      "ai_managers/README.md",
+      "ai_managers/README_PARALLEL_EXECUTION.md",
+      "docs/README.md",
+      "gui/README.md",
+      "gui/README_ERROR_CHECKING.md",
+      "Lib/site-packages/flask/sansio/README.md",
+      "Lib/site-packages/autogen/agentchat/contrib/agent_eval/README.md",
+      "Lib/site-packages/autogen/agentchat/contrib/captainagent/tools/README.md",
+      "archive/archive 12/README_GitHub_MergeHandler.md"
+    ],
+    "guides": [
+      "MAINTENANCE_GUIDE.md",
+      "docs/CHART_CREATION_GUIDE.md",
+      "docs/DEVELOPER_GUIDE.md",
+      "docs/PRACTICAL_USAGE_GUIDE.md",
+      "ai_managers/AUTOMATION_GUIDELINES.md"
+    ],
+    "specifications": [],
+    "logs": [
+      "git_task_manager.log",
+      "gui/auto_model_evaluator.log",
+      "gui/git_task_manager.log",
+      "gui/gui_launcher_error.log",
+      "gui/model_notifications.log",
+      "gui/model_visualization.log",
+      "gui/refined_model_reports.log",
+      "gui/scheduled_model_tester.log",
+      "logs/hardware_usage_20250517.log",
+      "gui/logs/hardware_usage_20250517.log"
+    ]
+  },
+  "critical_rules": {
+    "duplicate_prevention": "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/docs/duplicate_file_prevention_task.md",
+    "automation_guidelines": "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/ai_managers/README.md",
+    "reference": "Always check 1) /docs/duplicate_file_prevention_task.md before creating new files, 2) /ai_managers/README.md for automation implementation rules",
+    "file_creation": "Check for existing files before creating new ones",
+    "naming_convention": "Use proper prefixes: claude_, agent_, api_, unified_"
+  }
+}

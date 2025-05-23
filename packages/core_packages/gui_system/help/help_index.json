@@ -1,0 +1,38 @@
+{
+  "getting_started": {
+    "title": "Getting Started with GGG",
+    "filename": "getting_started.md",
+    "category": "Basics",
+    "priority": 1
+  },
+  "gui_overview": {
+    "title": "GUI Overview",
+    "filename": "gui_overview.md",
+    "category": "Interface",
+    "priority": 2
+  },
+  "simulation_guide": {
+    "title": "Running Simulations",
+    "filename": "simulation_guide.md",
+    "category": "Advanced",
+    "priority": 3
+  },
+  "hardware_monitoring": {
+    "title": "Hardware Resource Monitoring",
+    "filename": "hardware_monitoring.md",
+    "category": "Advanced",
+    "priority": 4
+  },
+  "task_scheduling": {
+    "title": "Task Management & Scheduling",
+    "filename": "task_scheduling.md",
+    "category": "Advanced",
+    "priority": 5
+  },
+  "troubleshooting": {
+    "title": "Troubleshooting",
+    "filename": "troubleshooting.md",
+    "category": "Support",
+    "priority": 6
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "restricted_automation_mode": {
+    "version": "1.1.0",
+    "last_updated": "2025-05-21T00:00:00Z",
+    "description": "Defines automation restrictions for sensitive files, folders, and functions",
+    "manual_override_email": "yerbro@gmail.com",
+    "default_automation": false,
+    
+    "automation_tiers": {
+      "true": "Always readable - no restrictions on AI agent access",
+      "contingent": "Conditional read - only if contingency criteria met (saves tokens)",
+      "false": "Restricted - requires manual override email approval to yerbro@gmail.com"
+    },
+    
+    "contingency_keywords": {
+      "logging_task": ["log", "logging", "history", "modifications", "record"],
+      "package_operations": ["install", "dependency", "requirements", "package", "pip"],
+      "chat_history": ["chat", "conversation", "opus", "history", "context"],
+      "archive_access": ["archive", "backup", "old", "historical", "restore"],
+      "user_request": ["user_mentions", "specifically_requested", "explicit_ask"]
+    },
+    
+    "folder_restrictions": {
+      "Help_pyautogen/": {
+        "automation": false,
+        "reason": "Contains user configuration and setup assistance files",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "Help_Python/": {
+        "automation": false,
+        "reason": "Contains user troubleshooting and help files",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "Help_User_Clipboard/": {
+        "automation": false,
+        "reason": "Contains user clipboard data and temporary files",
+        "override_required": true,
+        "allowed_operations": ["read"],
+        "restricted_operations": ["modify", "delete", "move", "create", "analyze"]
+      },
+      "Help_Utilities/": {
+        "automation": false,
+        "reason": "Contains user utility scripts and helpers",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "backups/": {
+        "automation": false,
+        "reason": "Contains backup files - critical for data recovery",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "archive/": {
+        "automation": false,
+        "reason": "Contains archived project history and legacy files",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "docs/": {
+        "automation": false,
+        "reason": "Contains project documentation - requires careful review",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "utils/": {
+        "automation": false,
+        "reason": "Contains utility modules including clipboard workflow - requires user approval",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create", "execute"]
+      }
+    },
+    
+    "contingent_files": {
+      "Log_Modifications_to_Project_Folder_GGG.txt": {
+        "automation": "contingent",
+        "contingency": "logging_task OR user_request",
+        "reason": "Historical log file - only read when logging or specifically requested",
+        "token_savings": "high"
+      },
+      "requirements.txt": {
+        "automation": "contingent", 
+        "contingency": "package_operations OR user_request",
+        "reason": "Static dependency list - only read for package operations",
+        "token_savings": "medium"
+      },
+      "Claude3OpusChat.txt": {
+        "automation": "contingent",
+        "contingency": "chat_history OR user_request",
+        "reason": "Historical chat data - rarely needed for current tasks",
+        "token_savings": "high"
+      },
+      "pip_list_*.txt": {
+        "automation": "contingent",
+        "contingency": "package_operations OR user_request",
+        "reason": "Package lists - only needed for dependency analysis",
+        "token_savings": "medium"
+      },
+      "AI_AGENTS_FILE_CREATION_GUIDELINES.md": {
+        "automation": "contingent",
+        "contingency": "troubleshooting OR system_error OR user_request",
+        "reason": "Reference documentation - templates embedded in code, only read when troubleshooting",
+        "token_savings": "high"
+      }
+    },
+    
+    "file_restrictions": {
+      "README*.md": {
+        "automation": false,
+        "reason": "Critical project documentation files",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "requirements.txt": {
+        "automation": false,
+        "reason": "Project dependencies - changes affect entire system",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "setup.py": {
+        "automation": false,
+        "reason": "Project installation configuration",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "pyvenv.cfg": {
+        "automation": false,
+        "reason": "Virtual environment configuration",
+        "override_required": true,
+        "allowed_operations": ["read"],
+        "restricted_operations": ["modify", "delete", "move", "create", "analyze"]
+      },
+      "*.bat": {
+        "automation": false,
+        "reason": "Batch scripts can affect system configuration",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "*.ps1": {
+        "automation": false,
+        "reason": "PowerShell scripts can affect system configuration",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "*.sh": {
+        "automation": false,
+        "reason": "Shell scripts can affect system configuration",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "*GUI*.ps1": {
+        "automation": false,
+        "reason": "GUI shortcut creation scripts affect desktop layout",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create", "execute"]
+      },
+      "*GUI*.bat": {
+        "automation": false,
+        "reason": "GUI launch scripts affect desktop and user interface",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create", "execute"]
+      },
+      "*shortcut*.ps1": {
+        "automation": false,
+        "reason": "Desktop shortcut creation affects user desktop layout",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create", "execute"]
+      },
+      "*shortcut*.bat": {
+        "automation": false,
+        "reason": "Desktop shortcut creation affects user desktop layout",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create", "execute"]
+      },
+      "*layout*.py": {
+        "automation": false,
+        "reason": "GUI layout files control user interface appearance",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      },
+      "gui_*.py": {
+        "automation": false,
+        "reason": "GUI implementation files control user interface behavior",
+        "override_required": true,
+        "allowed_operations": ["read", "analyze"],
+        "restricted_operations": ["modify", "delete", "move", "create"]
+      }
+    },
+    
+    "function_restrictions": {
+      "file_deletion": {
+        "automation": false,
+        "reason": "File deletion operations require manual approval",
+        "override_required": true,
+        "scope": "all_files"
+      },
+      "system_configuration": {
+        "automation": false,
+        "reason": "System configuration changes require manual approval",
+        "override_required": true,
+        "scope": "system_files"
+      },
+      "dependency_modification": {
+        "automation": false,
+        "reason": "Dependency changes can break the system",
+        "override_required": true,
+        "scope": "package_files"
+      },
+      "backup_operations": {
+        "automation": false,
+        "reason": "Backup operations require careful consideration",
+        "override_required": true,
+        "scope": "backup_files"
+      },
+      "clipboard_workflow": {
+        "automation": false,
+        "reason": "Clipboard workflow utilities access user data and must be approved",
+        "override_required": true,
+        "scope": "clipboard_utilities"
+      },
+      "utility_execution": {
+        "automation": false,
+        "reason": "Utility module execution can affect user workflows",
+        "override_required": true,
+        "scope": "utility_modules"
+      },
+      "gui_layout_modification": {
+        "automation": false,
+        "reason": "GUI layout changes directly affect user interface experience",
+        "override_required": true,
+        "scope": "gui_files"
+      },
+      "desktop_shortcut_creation": {
+        "automation": false,
+        "reason": "Desktop shortcut creation modifies user desktop environment",
+        "override_required": true,
+        "scope": "desktop_files"
+      },
+      "gui_script_execution": {
+        "automation": false,
+        "reason": "GUI scripts can modify interface behavior and desktop shortcuts",
+        "override_required": true,
+        "scope": "gui_scripts"
+      }
+    },
+    
+    "exception_rules": {
+      "emergency_mode": {
+        "description": "Emergency mode allows certain operations without override",
+        "enabled": false,
+        "allowed_operations": ["read", "analyze", "create_logs"],
+        "trigger_conditions": ["system_failure", "critical_error"]
+      },
+      "read_only_analysis": {
+        "description": "Read-only analysis is always allowed",
+        "enabled": true,
+        "applies_to": "all_restricted_items"
+      }
+    },
+    
+    "override_request_template": {
+      "subject": "GlowingGoldenGlobe - Manual Override Request",
+      "required_fields": [
+        "operation_type",
+        "target_file_or_folder",
+        "reason_for_override",
+        "expected_impact",
+        "ai_agent_session_id",
+        "timestamp"
+      ],
+      "approval_timeout": "24_hours",
+      "auto_deny_after_timeout": true
+    }
+  }
+}

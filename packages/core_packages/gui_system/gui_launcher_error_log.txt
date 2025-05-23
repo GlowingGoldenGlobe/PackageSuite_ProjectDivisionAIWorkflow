@@ -1,0 +1,391 @@
+[2025-05-15 03:42:34] ERROR: Error starting GlowingGoldenGlobe GUI: cannot use geometry manager pack inside .!frame.!notebook.!frame.!frame which already has slaves managed by grid
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\run_ggg_gui.py", line 231, in main
+    app = getattr(gui_module, gui_class)(root)
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 150, in __init__
+    self.setup_main_tab()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 608, in setup_main_tab
+    options_frame.pack(fill=tk.X, pady=10)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\tkinter\__init__.py", line 2596, in pack_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('pack', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager pack inside .!frame.!notebook.!frame.!frame which already has slaves managed by grid
+
+
+[2025-05-15 18:49:41] ERROR: Error starting GlowingGoldenGlobe GUI: unexpected indent (fixed_agent_mode_gui.py, line 595)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\run_ggg_gui.py", line 227, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 595
+    def setup_main_tab(self):
+IndentationError: unexpected indent
+
+
+[2025-05-15 19:36:57] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\run_ggg_gui.py", line 227, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 21:12:30] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\run_ggg_gui.py", line 229, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 21:29:43] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\run_ggg_gui.py", line 229, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\fixed_agent_mode_gui.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (c:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 21:58:33] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 242, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_enhanced.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 21:59:59] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 242, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_enhanced.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 22:00:34] ERROR: Error starting GlowingGoldenGlobe GUI: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 242, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_enhanced.py", line 42, in <module>
+    from agent_mode_gui_implementation import apply_gui_enhancements, TimeLimit, ModelVersionDisplay
+ImportError: cannot import name 'apply_gui_enhancements' from 'agent_mode_gui_implementation' (C:\Users\yerbr\glowinggoldenglobe_venv\agent_mode_gui_implementation.py). Did you mean: 'implement_enhancements'?
+
+
+[2025-05-15 22:31:04] ERROR: Error starting GlowingGoldenGlobe GUI: unindent does not match any outer indentation level (gui_main.py, line 242)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 179, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 242
+    def start_new_session(self):
+                                ^
+IndentationError: unindent does not match any outer indentation level
+
+
+[2025-05-17 08:55:35] ERROR: Error starting GlowingGoldenGlobe GUI: unindent does not match any outer indentation level (gui_main.py, line 243)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 179, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 243
+    def start_new_session(self):
+                                ^
+IndentationError: unindent does not match any outer indentation level
+
+
+[2025-05-17 10:01:42] ERROR: Error starting GlowingGoldenGlobe GUI: unindent does not match any outer indentation level (gui_main.py, line 243)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 179, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 243
+    def start_new_session(self):
+                                ^
+IndentationError: unindent does not match any outer indentation level
+
+
+[2025-05-17 12:48:55] ERROR: Error starting GlowingGoldenGlobe GUI: invalid syntax (gui_main.py, line 311)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 179, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 311
+    self.run_command("run_automated_model_development.bat")        except Exception as e:
+                                                                   ^^^^^^
+SyntaxError: invalid syntax
+
+
+[2025-05-17 12:52:49] ERROR: Error starting GlowingGoldenGlobe GUI: invalid syntax (gui_main.py, line 2175)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 179, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 2175
+    )    def on_part_selected(self, event):
+         ^^^
+SyntaxError: invalid syntax
+
+
+[2025-05-17 12:57:10] ERROR: Error starting GlowingGoldenGlobe GUI: module 'gui_main' has no attribute 'MainGUI'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 184, in main
+    app = getattr(gui_module, gui_version)(root)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'gui_main' has no attribute 'MainGUI'
+
+
+[2025-05-17 14:06:15] ERROR: Error starting GlowingGoldenGlobe GUI: invalid syntax (gui_main.py, line 91)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 91
+    self.auto_continue = tk.BooleanVar(value=self.config.get("auto_continue", True))        self.selected_version = tk.StringVar(value=self.config.get("selected_version", "1"))
+                                                                                            ^^^^
+SyntaxError: invalid syntax
+
+
+[2025-05-17 14:22:37] ERROR: Error starting GlowingGoldenGlobe GUI: 'break' outside loop (gui_main.py, line 2487)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 2487
+    break
+    ^^^^^
+SyntaxError: 'break' outside loop
+
+
+[2025-05-17 14:26:49] ERROR: Error starting GlowingGoldenGlobe GUI: invalid syntax (gui_main.py, line 35)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 35
+    class gui_main.py:
+                  ^
+SyntaxError: invalid syntax
+
+
+[2025-05-17 14:39:32] ERROR: Error starting GlowingGoldenGlobe GUI: expected 'except' or 'finally' block (gui_main.py, line 344)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 344
+    self.process_running = True
+    ^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+
+[2025-05-17 14:47:49] ERROR: Error starting GlowingGoldenGlobe GUI: expected 'except' or 'finally' block (gui_main.py, line 1790)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 1790
+    self.ai_status.pack(anchor=tk.W, padx=10, pady=5)
+    ^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+
+[2025-05-18 02:12:40] ERROR: Error starting GlowingGoldenGlobe GUI: expected 'except' or 'finally' block (gui_main.py, line 1790)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 1790
+    self.ai_status.pack(anchor=tk.W, padx=10, pady=5)
+    ^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+
+[2025-05-18 02:19:14] ERROR: Error starting GlowingGoldenGlobe GUI: expected 'except' or 'finally' block (gui_main.py, line 1790)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 1790
+    self.ai_status.pack(anchor=tk.W, padx=10, pady=5)
+    ^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+
+[2025-05-18 06:10:43] ERROR: Error starting GlowingGoldenGlobe GUI: expected 'except' or 'finally' block (gui_main.py, line 1790)
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 320, in main
+    spec.loader.exec_module(gui_module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 1790
+    self.ai_status.pack(anchor=tk.W, padx=10, pady=5)
+    ^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+
+[2025-05-19 05:15:27] ERROR: Error starting GlowingGoldenGlobe GUI: 'GGGStyles' object has no attribute 'apply_theme'
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_launcher.py", line 354, in main
+    app = getattr(gui_module, gui_version)(root)
+  File "c:\Users\yerbr\glowinggoldenglobe_venv\gui\gui_main.py", line 60, in __init__
+    self.styles.apply_theme()
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GGGStyles' object has no attribute 'apply_theme'
+
+
+05/20/2025 23:29:51 - Desktop shortcut created at: C:\Users\yerbr\Desktop\GlowingGoldenGlobe - Full GUI.lnk
+05/20/2025 23:33:56 - Desktop shortcut created at: C:\Users\yerbr\Desktop\GlowingGoldenGlobe - GUI with Claude Parallel.lnk
+2025-05-20 23:40:22.905857: 'GlowingGoldenGlobeGUI' object has no attribute 'open_in_blender'
+2025-05-20 23:40:44.289432: 'GlowingGoldenGlobeGUI' object has no attribute 'open_in_blender'
+05/20/2025 23:53:57 - Desktop shortcut created at: C:\Users\yerbr\Desktop\GlowingGoldenGlobe - GUI with Claude Parallel.lnk
+Wed 05/21/2025  1:32:29.75 - GUI launch attempted 
+Wed 05/21/2025  1:35:18.11 - GUI launch attempted 
+Wed 05/21/2025  1:49:22.53 - GUI launch attempted 
+Wed 05/21/2025  1:49:42.79 - GUI launch attempted 
+Wed 05/21/2025  2:07:14.16 - GUI launch attempted 
+Wed 05/21/2025  2:17:46.21 - GUI launch attempted 
+Wed 05/21/2025  2:23:37.14 - GUI launch attempted 
+Wed 05/21/2025  2:27:25.64 - GUI launch attempted 
+Wed 05/21/2025  2:27:53.91 - GUI launch attempted 
+Wed 05/21/2025  2:29:55.49 - GUI launch attempted 
+Wed 05/21/2025  2:34:41.18 - GUI launch attempted 
+Wed 05/21/2025  2:49:48.21 - GUI launch attempted 
+Wed 05/21/2025  3:06:00.49 - GUI launch attempted 
+05/21/2025 03:18:49 - Desktop shortcut created at: C:\Users\yerbr\Desktop\GlowingGoldenGlobe - Fixed Layout GUI.lnk
+Wed 05/21/2025  4:43:39.97 - GUI launch (no cache) attempted 
+Wed 05/21/2025  4:54:29.83 - GUI launch (no cache) attempted 
+Wed 05/21/2025  5:22:04.91 - GUI launch (no cache) attempted 
+Wed 05/21/2025  5:23:53.67 - GUI launch (no cache) attempted 
+Wed 05/21/2025  5:53:53.89 - GUI launch (no cache) attempted 
+Wed 05/21/2025  6:32:00.17 - GUI launch (no cache) attempted 
+Wed 05/21/2025  6:45:26.29 - GUI launch (no cache) attempted 
+Wed 05/21/2025 15:57:04.04 - GUI launch (no cache) attempted 
+05/21/2025 16:32:14 - Desktop shortcut created at: C:\Users\yerbr\Desktop\GlowingGoldenGlobe - Fixed Layout GUI.lnk
+Wed 05/21/2025 18:02:43.91 - GUI launch (no cache) attempted 
+Wed 05/21/2025 18:06:56.82 - GUI launch (no cache) attempted 
+2025-05-22 04:43:04.137067: cannot use geometry manager grid inside .!frame.!frame2 which already has slaves managed by pack
+[2025-05-22 04:58:29] ERROR: Test error message
+Traceback:
+Test traceback
+File test.py line 1
+NameError: test error
+
+[2025-05-22 05:06:38] ERROR: Test error with LogManager
+Traceback:
+Test traceback
+File test.py line 1
+NameError: test managed error
+
+2025-05-22 05:19:01.812179: cannot use geometry manager grid inside .!frame.!frame2 which already has slaves managed by pack
+2025-05-23 00:24:50.856908: 'InterleavingTaskControls' object has no attribute 'status_label'
+2025-05-23 00:28:13.048886: id must be a valid identifier returned from after or after_idle
+2025-05-23 02:40:26.013409: cannot use geometry manager pack inside .!frame.!notebook.!frame.!frame2 which already has slaves managed by grid
+2025-05-23 04:56:15.989181: cannot use geometry manager pack inside .!frame.!notebook.!frame.!frame2 which already has slaves managed by grid
+2025-05-23 05:34:06.396725: cannot use geometry manager pack inside .!frame.!notebook.!frame.!frame2 which already has slaves managed by grid

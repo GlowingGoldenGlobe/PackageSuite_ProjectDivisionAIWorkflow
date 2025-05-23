@@ -1,0 +1,41 @@
+{
+  "active_sessions": {},
+  "last_updated": "2025-05-21T21:29:05.490345",
+  "completed_sessions": {
+    "terminal_1747879806_38244": {
+      "type": "terminal",
+      "start_time": "2025-05-21T21:10:06.572154",
+      "process_id": 38244,
+      "parent_process": {
+        "name": "bash",
+        "pid": 38220,
+        "cmdline": "/bin/bash -c -l source /tmp/claude-shell-snapshot-0812 && eval \"python -c \\\"\nfrom ai_managers.auto_conflict_handler import check_operation_allowed, safe_file_operation\n\n# Test various restricted operations\ntest_cases = [\n    ('execute', 'utils/clipboard_workflow_utils.py'),\n    ('modify', 'Help_pyautogen/config.py'),\n    ('delete', 'backups/important_data.json'),\n    ('read', 'utils/clipboard_workflow_utils.py'),  # Should be allowed\n    ('create', 'normal_file.txt')  # Should be allowed\n]\n\nprint('Testing Restricted Automation Mode:')\nprint('='*50)\n\nfor operation, target in test_cases:\n    allowed = check_operation_allowed(operation, target)\n    status = '\u2705 ALLOWED' if allowed else '\ud83d\udd12 RESTRICTED'\n    print(f'{status}: {operation.upper()} {target}')\n\nprint('\\\\n' + '='*50)\nprint('Example: AI tries to execute clipboard utility')\nresult = safe_file_operation('execute', 'utils/clipboard_workflow_utils.py', 'AI workflow automation task')\nprint(f'Operation result: {result}')\n\\\"\" \\< /dev/null && pwd >| /tmp/claude-bd7c-cwd"
+      },
+      "command_line": "/home/yerbr/.pyenv/versions/3.13.3/bin/python -c \nfrom ai_managers.auto_conflict_handler import check_operation_allowed, safe_file_operation\n\n# Test various restricted operations\ntest_cases = [\n    ('execute', 'utils/clipboard_workflow_utils.py'),\n    ('modify', 'Help_pyautogen/config.py'),\n    ('delete', 'backups/important_data.json'),\n    ('read', 'utils/clipboard_workflow_utils.py'),  # Should be allowed\n    ('create', 'normal_file.txt')  # Should be allowed\n]\n\nprint('Testing Restricted Automation Mode:')\nprint('='*50)\n\nfor operation, target in test_cases:\n    allowed = check_operation_allowed(operation, target)\n    status = '\u2705 ALLOWED' if allowed else '\ud83d\udd12 RESTRICTED'\n    print(f'{status}: {operation.upper()} {target}')\n\nprint('\\n' + '='*50)\nprint('Example: AI tries to execute clipboard utility')\nresult = safe_file_operation('execute', 'utils/clipboard_workflow_utils.py', 'AI workflow automation task')\nprint(f'Operation result: {result}')\n",
+      "working_directory": "/mnt/c/Users/yerbr/glowinggoldenglobe_venv",
+      "environment_hints": [
+        "terminal_parent",
+        "terminal_env"
+      ],
+      "end_time": "2025-05-21T21:10:06.714226"
+    },
+    "terminal_1747880945_43072": {
+      "type": "terminal",
+      "start_time": "2025-05-21T21:29:05.318037",
+      "process_id": 43072,
+      "parent_process": {
+        "name": "bash",
+        "pid": 43048,
+        "cmdline": "/bin/bash -c -l source /tmp/claude-shell-snapshot-0812 && eval 'python test_gui_restrictions.py' \\< /dev/null && pwd >| /tmp/claude-03e2-cwd"
+      },
+      "command_line": "/home/yerbr/.pyenv/versions/3.13.3/bin/python test_gui_restrictions.py",
+      "working_directory": "/mnt/c/Users/yerbr/glowinggoldenglobe_venv",
+      "environment_hints": [
+        "terminal_parent",
+        "terminal_env",
+        "python_script"
+      ],
+      "end_time": "2025-05-21T21:29:05.490336"
+    }
+  }
+}

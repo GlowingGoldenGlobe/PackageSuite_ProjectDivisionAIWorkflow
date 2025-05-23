@@ -1,0 +1,1377 @@
+{
+  "file_locations": {
+    "root": [
+      {
+        "name": "Log_Tokens_Used.json",
+        "path": "Log_Tokens_Used.json",
+        "size": 251,
+        "type": "json"
+      },
+      {
+        "name": "agent_mode_config.json",
+        "path": "agent_mode_config.json",
+        "size": 664,
+        "type": "json"
+      },
+      {
+        "name": "budget.json",
+        "path": "budget.json",
+        "size": 2175,
+        "type": "json"
+      },
+      {
+        "name": "hardware_monitor_config.json",
+        "path": "hardware_monitor_config.json",
+        "size": 7625,
+        "type": "json"
+      },
+      {
+        "name": "merge_handler_config.json",
+        "path": "merge_handler_config.json",
+        "size": 435,
+        "type": "json"
+      },
+      {
+        "name": "micro_robot_composite_part_v2.json",
+        "path": "micro_robot_composite_part_v2.json",
+        "size": 4824,
+        "type": "json"
+      },
+      {
+        "name": "micro_robot_task_test_results.json",
+        "path": "micro_robot_task_test_results.json",
+        "size": 222,
+        "type": "json"
+      },
+      {
+        "name": "model_testing_schedule.json",
+        "path": "model_testing_schedule.json",
+        "size": 206,
+        "type": "json"
+      },
+      {
+        "name": "notification_config.json",
+        "path": "notification_config.json",
+        "size": 400,
+        "type": "json"
+      },
+      {
+        "name": "occupations.json",
+        "path": "occupations.json",
+        "size": 6742,
+        "type": "json"
+      },
+      {
+        "name": "package_update_config.json",
+        "path": "package_update_config.json",
+        "size": 1037,
+        "type": "json"
+      },
+      {
+        "name": "parallel_execution_config.json",
+        "path": "parallel_execution_config.json",
+        "size": 1479,
+        "type": "json"
+      },
+      {
+        "name": "parallel_execution_tasks.json",
+        "path": "parallel_execution_tasks.json",
+        "size": 2290,
+        "type": "json"
+      },
+      {
+        "name": "pizza_store_occupations.json",
+        "path": "pizza_store_occupations.json",
+        "size": 2333,
+        "type": "json"
+      },
+      {
+        "name": "project_folders_and_files_structure.json",
+        "path": "project_folders_and_files_structure.json",
+        "size": 6446,
+        "type": "json"
+      },
+      {
+        "name": "project_instructions.json",
+        "path": "project_instructions.json",
+        "size": 4447,
+        "type": "json"
+      },
+      {
+        "name": "project_tasks.json",
+        "path": "project_tasks.json",
+        "size": 773,
+        "type": "json"
+      },
+      {
+        "name": "scheduled_tasks.json",
+        "path": "scheduled_tasks.json",
+        "size": 1939,
+        "type": "json"
+      },
+      {
+        "name": "specific_job_names.json",
+        "path": "specific_job_names.json",
+        "size": 2262,
+        "type": "json"
+      },
+      {
+        "name": "temp_task_data.json",
+        "path": "temp_task_data.json",
+        "size": 540,
+        "type": "json"
+      },
+      {
+        "name": "workforce_operations.json",
+        "path": "workforce_operations.json",
+        "size": 1316,
+        "type": "json"
+      },
+      {
+        "name": "AI_MANAGER_CONCEPT.md",
+        "path": "AI_MANAGER_CONCEPT.md",
+        "size": 2517,
+        "type": "md"
+      },
+      {
+        "name": "Definitions.md",
+        "path": "Definitions.md",
+        "size": 1076,
+        "type": "md"
+      },
+      {
+        "name": "ENHANCEMENT_SUMMARY.md",
+        "path": "ENHANCEMENT_SUMMARY.md",
+        "size": 3393,
+        "type": "md"
+      },
+      {
+        "name": "ERROR_HANDLING_SYSTEM.md",
+        "path": "ERROR_HANDLING_SYSTEM.md",
+        "size": 2445,
+        "type": "md"
+      },
+      {
+        "name": "GGG_MAINTENANCE.md",
+        "path": "GGG_MAINTENANCE.md",
+        "size": 3004,
+        "type": "md"
+      },
+      {
+        "name": "GUI_ENHANCEMENTS.md",
+        "path": "GUI_ENHANCEMENTS.md",
+        "size": 3155,
+        "type": "md"
+      },
+      {
+        "name": "GUI_README.md",
+        "path": "GUI_README.md",
+        "size": 1888,
+        "type": "md"
+      },
+      {
+        "name": "IMPLEMENTATION_NOTES.md",
+        "path": "IMPLEMENTATION_NOTES.md",
+        "size": 2139,
+        "type": "md"
+      },
+      {
+        "name": "IMPLEMENTATION_REPORT.md",
+        "path": "IMPLEMENTATION_REPORT.md",
+        "size": 2989,
+        "type": "md"
+      },
+      {
+        "name": "IMPLEMENTED_ENHANCEMENTS.md",
+        "path": "IMPLEMENTED_ENHANCEMENTS.md",
+        "size": 3752,
+        "type": "md"
+      },
+      {
+        "name": "INSTALLATION.md",
+        "path": "INSTALLATION.md",
+        "size": 7830,
+        "type": "md"
+      },
+      {
+        "name": "MAINTENANCE_GUIDE.md",
+        "path": "MAINTENANCE_GUIDE.md",
+        "size": 0,
+        "type": "md"
+      },
+      {
+        "name": "PARALLEL_AGENT_MODE.md",
+        "path": "PARALLEL_AGENT_MODE.md",
+        "size": 4647,
+        "type": "md"
+      },
+      {
+        "name": "PORTABILITY_ENHANCEMENTS.md",
+        "path": "PORTABILITY_ENHANCEMENTS.md",
+        "size": 2833,
+        "type": "md"
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "size": 7359,
+        "type": "md"
+      },
+      {
+        "name": "README_GUI_ENHANCEMENTS.md",
+        "path": "README_GUI_ENHANCEMENTS.md",
+        "size": 4690,
+        "type": "md"
+      },
+      {
+        "name": "README_GitHub.md",
+        "path": "README_GitHub.md",
+        "size": 196,
+        "type": "md"
+      },
+      {
+        "name": "README_GitHub_MergeHandler.md",
+        "path": "README_GitHub_MergeHandler.md",
+        "size": 6024,
+        "type": "md"
+      },
+      {
+        "name": "README_MERGE_HANDLER.md",
+        "path": "README_MERGE_HANDLER.md",
+        "size": 4242,
+        "type": "md"
+      },
+      {
+        "name": "RESOURCE_MANAGEMENT.md",
+        "path": "RESOURCE_MANAGEMENT.md",
+        "size": 5852,
+        "type": "md"
+      },
+      {
+        "name": "START_AGENT_MODE_README.md",
+        "path": "START_AGENT_MODE_README.md",
+        "size": 3600,
+        "type": "md"
+      },
+      {
+        "name": "automated_refinement_guide.md",
+        "path": "automated_refinement_guide.md",
+        "size": 3987,
+        "type": "md"
+      },
+      {
+        "name": "automated_workflow_integration_guide.md",
+        "path": "automated_workflow_integration_guide.md",
+        "size": 14854,
+        "type": "md"
+      },
+      {
+        "name": "project_tasks.md",
+        "path": "project_tasks.md",
+        "size": 74,
+        "type": "md"
+      },
+      {
+        "name": "Backup-OldScripts.ps1",
+        "path": "Backup-OldScripts.ps1",
+        "size": 0,
+        "type": "ps1"
+      },
+      {
+        "name": "Create-AgentModeShortcut.ps1",
+        "path": "Create-AgentModeShortcut.ps1",
+        "size": 1181,
+        "type": "ps1"
+      },
+      {
+        "name": "Create-ImprovedGUIShortcut.ps1",
+        "path": "Create-ImprovedGUIShortcut.ps1",
+        "size": 0,
+        "type": "ps1"
+      },
+      {
+        "name": "Create-ParallelAgentModeShortcut.ps1",
+        "path": "Create-ParallelAgentModeShortcut.ps1",
+        "size": 3190,
+        "type": "ps1"
+      },
+      {
+        "name": "Start-AgentMode-CLI.ps1",
+        "path": "Start-AgentMode-CLI.ps1",
+        "size": 1231,
+        "type": "ps1"
+      },
+      {
+        "name": "Start-AgentMode-NoGUI.ps1",
+        "path": "Start-AgentMode-NoGUI.ps1",
+        "size": 2829,
+        "type": "ps1"
+      },
+      {
+        "name": "Start-AgentMode.ps1",
+        "path": "Start-AgentMode.ps1",
+        "size": 2474,
+        "type": "ps1"
+      },
+      {
+        "name": "Test-GUIFunctionality.ps1",
+        "path": "Test-GUIFunctionality.ps1",
+        "size": 7490,
+        "type": "ps1"
+      },
+      {
+        "name": "Test-Installation.ps1",
+        "path": "Test-Installation.ps1",
+        "size": 4171,
+        "type": "ps1"
+      },
+      {
+        "name": "Update-GUIShortcuts.ps1",
+        "path": "Update-GUIShortcuts.ps1",
+        "size": 4141,
+        "type": "ps1"
+      },
+      {
+        "name": "apply_parallel_fix.ps1",
+        "path": "apply_parallel_fix.ps1",
+        "size": 2267,
+        "type": "ps1"
+      },
+      {
+        "name": "merge_handler.ps1",
+        "path": "merge_handler.ps1",
+        "size": 4069,
+        "type": "ps1"
+      },
+      {
+        "name": "move_duplicate_scripts.ps1",
+        "path": "move_duplicate_scripts.ps1",
+        "size": 0,
+        "type": "ps1"
+      },
+      {
+        "name": "move_old_scripts.ps1",
+        "path": "move_old_scripts.ps1",
+        "size": 0,
+        "type": "ps1"
+      },
+      {
+        "name": "schedule_git_operations.ps1",
+        "path": "schedule_git_operations.ps1",
+        "size": 3791,
+        "type": "ps1"
+      },
+      {
+        "name": "Blender_Main.py",
+        "path": "Blender_Main.py",
+        "size": 2930,
+        "type": "py"
+      },
+      {
+        "name": "Cluade3Opus_Suggestion_bpy.py",
+        "path": "Cluade3Opus_Suggestion_bpy.py",
+        "size": 1603,
+        "type": "py"
+      },
+      {
+        "name": "Combine_files_for_Claude3OpusChat.py",
+        "path": "Combine_files_for_Claude3OpusChat.py",
+        "size": 4825,
+        "type": "py"
+      },
+      {
+        "name": "Introduction_1.py",
+        "path": "Introduction_1.py",
+        "size": 1053,
+        "type": "py"
+      },
+      {
+        "name": "Introduction_2_Project_Contents_and_Architecture.py",
+        "path": "Introduction_2_Project_Contents_and_Architecture.py",
+        "size": 1780,
+        "type": "py"
+      },
+      {
+        "name": "Objectives_1.py",
+        "path": "Objectives_1.py",
+        "size": 2831,
+        "type": "py"
+      },
+      {
+        "name": "Practice_05052024.py",
+        "path": "Practice_05052024.py",
+        "size": 1863,
+        "type": "py"
+      },
+      {
+        "name": "Procedure_1.py",
+        "path": "Procedure_1.py",
+        "size": 942,
+        "type": "py"
+      },
+      {
+        "name": "Verify_Parameters.py",
+        "path": "Verify_Parameters.py",
+        "size": 3325,
+        "type": "py"
+      },
+      {
+        "name": "about_AI_Agents_System_Ops_Prerequisites.py",
+        "path": "about_AI_Agents_System_Ops_Prerequisites.py",
+        "size": 1529,
+        "type": "py"
+      },
+      {
+        "name": "about_contents.py",
+        "path": "about_contents.py",
+        "size": 5007,
+        "type": "py"
+      },
+      {
+        "name": "agent1_part1_blender.py",
+        "path": "agent1_part1_blender.py",
+        "size": 12603,
+        "type": "py"
+      },
+      {
+        "name": "agent1_part1_runner.py",
+        "path": "agent1_part1_runner.py",
+        "size": 23529,
+        "type": "py"
+      },
+      {
+        "name": "agent_mode_gui.py",
+        "path": "agent_mode_gui.py",
+        "size": 114453,
+        "type": "py"
+      },
+      {
+        "name": "agent_mode_gui_enhanced.py",
+        "path": "agent_mode_gui_enhanced.py",
+        "size": 59835,
+        "type": "py"
+      },
+      {
+        "name": "agent_mode_gui_implementation.py",
+        "path": "agent_mode_gui_implementation.py",
+        "size": 40943,
+        "type": "py"
+      },
+      {
+        "name": "agent_mode_gui_modified.py",
+        "path": "agent_mode_gui_modified.py",
+        "size": 49664,
+        "type": "py"
+      },
+      {
+        "name": "ai_agent_model_evaluator.py",
+        "path": "ai_agent_model_evaluator.py",
+        "size": 10509,
+        "type": "py"
+      },
+      {
+        "name": "ai_agent_model_refiner.py",
+        "path": "ai_agent_model_refiner.py",
+        "size": 18478,
+        "type": "py"
+      },
+      {
+        "name": "auto_model_evaluator.py",
+        "path": "auto_model_evaluator.py",
+        "size": 24603,
+        "type": "py"
+      },
+      {
+        "name": "auto_refiner_integration.py",
+        "path": "auto_refiner_integration.py",
+        "size": 24228,
+        "type": "py"
+      },
+      {
+        "name": "blender_bridge.py",
+        "path": "blender_bridge.py",
+        "size": 3925,
+        "type": "py"
+      },
+      {
+        "name": "blender_bridge_runner.py",
+        "path": "blender_bridge_runner.py",
+        "size": 14285,
+        "type": "py"
+      },
+      {
+        "name": "blender_bridge_script.py",
+        "path": "blender_bridge_script.py",
+        "size": 5467,
+        "type": "py"
+      },
+      {
+        "name": "blender_execution_script.py",
+        "path": "blender_execution_script.py",
+        "size": 10530,
+        "type": "py"
+      },
+      {
+        "name": "blender_only_agent.py",
+        "path": "blender_only_agent.py",
+        "size": 10337,
+        "type": "py"
+      },
+      {
+        "name": "blender_test_script.py",
+        "path": "blender_test_script.py",
+        "size": 2159,
+        "type": "py"
+      },
+      {
+        "name": "bridge_runner.py",
+        "path": "bridge_runner.py",
+        "size": 2236,
+        "type": "py"
+      },
+      {
+        "name": "bridge_to_o3de.py",
+        "path": "bridge_to_o3de.py",
+        "size": 2593,
+        "type": "py"
+      },
+      {
+        "name": "check_gpu_for_blender.py",
+        "path": "check_gpu_for_blender.py",
+        "size": 16004,
+        "type": "py"
+      },
+      {
+        "name": "check_pil.py",
+        "path": "check_pil.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "check_python.py",
+        "path": "check_python.py",
+        "size": 202,
+        "type": "py"
+      },
+      {
+        "name": "cloud_storage.py",
+        "path": "cloud_storage.py",
+        "size": 1859,
+        "type": "py"
+      },
+      {
+        "name": "comprehensive_fix.py",
+        "path": "comprehensive_fix.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "create_final_version.py",
+        "path": "create_final_version.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "create_fixed_version.py",
+        "path": "create_fixed_version.py",
+        "size": 3196,
+        "type": "py"
+      },
+      {
+        "name": "direct_fix.py",
+        "path": "direct_fix.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "direct_test.py",
+        "path": "direct_test.py",
+        "size": 216,
+        "type": "py"
+      },
+      {
+        "name": "enhanced_micro_robot_part.py",
+        "path": "enhanced_micro_robot_part.py",
+        "size": 13072,
+        "type": "py"
+      },
+      {
+        "name": "export_model_formats.py",
+        "path": "export_model_formats.py",
+        "size": 4674,
+        "type": "py"
+      },
+      {
+        "name": "fix_agent_mode_gui_enhanced.py",
+        "path": "fix_agent_mode_gui_enhanced.py",
+        "size": 1979,
+        "type": "py"
+      },
+      {
+        "name": "fix_final.py",
+        "path": "fix_final.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "fix_final_manual.py",
+        "path": "fix_final_manual.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "fix_indentation.py",
+        "path": "fix_indentation.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "fix_indentation_final.py",
+        "path": "fix_indentation_final.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "fixed_agent_mode_gui.py",
+        "path": "fixed_agent_mode_gui.py",
+        "size": 61036,
+        "type": "py"
+      },
+      {
+        "name": "fixed_blender_bridge_runner.py",
+        "path": "fixed_blender_bridge_runner.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "fixed_check_model_status.py",
+        "path": "fixed_check_model_status.py",
+        "size": 1850,
+        "type": "py"
+      },
+      {
+        "name": "fixed_ggg_gui_styles.py",
+        "path": "fixed_ggg_gui_styles.py",
+        "size": 13399,
+        "type": "py"
+      },
+      {
+        "name": "fixed_time_limit.py",
+        "path": "fixed_time_limit.py",
+        "size": 2285,
+        "type": "py"
+      },
+      {
+        "name": "generate_improved_model.py",
+        "path": "generate_improved_model.py",
+        "size": 6650,
+        "type": "py"
+      },
+      {
+        "name": "get_file_size.py",
+        "path": "get_file_size.py",
+        "size": 1413,
+        "type": "py"
+      },
+      {
+        "name": "ggg_gui_implementation.py",
+        "path": "ggg_gui_implementation.py",
+        "size": 17168,
+        "type": "py"
+      },
+      {
+        "name": "ggg_gui_styles.py",
+        "path": "ggg_gui_styles.py",
+        "size": 12525,
+        "type": "py"
+      },
+      {
+        "name": "ggg_improved_gui.py",
+        "path": "ggg_improved_gui.py",
+        "size": 14831,
+        "type": "py"
+      },
+      {
+        "name": "ggg_maintenance.py",
+        "path": "ggg_maintenance.py",
+        "size": 8628,
+        "type": "py"
+      },
+      {
+        "name": "ggg_maintenance_helper.py",
+        "path": "ggg_maintenance_helper.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "git_manager_hook.py",
+        "path": "git_manager_hook.py",
+        "size": 4200,
+        "type": "py"
+      },
+      {
+        "name": "git_stash_handler.py",
+        "path": "git_stash_handler.py",
+        "size": 16844,
+        "type": "py"
+      },
+      {
+        "name": "gpu_render.py",
+        "path": "gpu_render.py",
+        "size": 1095,
+        "type": "py"
+      },
+      {
+        "name": "hardware_monitor.py",
+        "path": "hardware_monitor.py",
+        "size": 11132,
+        "type": "py"
+      },
+      {
+        "name": "help_system.py",
+        "path": "help_system.py",
+        "size": 14383,
+        "type": "py"
+      },
+      {
+        "name": "import_from_AI_Agent_Folders.py",
+        "path": "import_from_AI_Agent_Folders.py",
+        "size": 1105,
+        "type": "py"
+      },
+      {
+        "name": "import_tester.py",
+        "path": "import_tester.py",
+        "size": 2582,
+        "type": "py"
+      },
+      {
+        "name": "improved_agent_mode_gui.py",
+        "path": "improved_agent_mode_gui.py",
+        "size": 39218,
+        "type": "py"
+      },
+      {
+        "name": "improved_blender_script.py",
+        "path": "improved_blender_script.py",
+        "size": 3894,
+        "type": "py"
+      },
+      {
+        "name": "improved_blender_test.py",
+        "path": "improved_blender_test.py",
+        "size": 7000,
+        "type": "py"
+      },
+      {
+        "name": "launch_ggg_gui.py",
+        "path": "launch_ggg_gui.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "launch_ggg_gui_new.py",
+        "path": "launch_ggg_gui_new.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "launch_gui.py",
+        "path": "launch_gui.py",
+        "size": 5152,
+        "type": "py"
+      },
+      {
+        "name": "list_builder_from_text_list.py",
+        "path": "list_builder_from_text_list.py",
+        "size": 1465,
+        "type": "py"
+      },
+      {
+        "name": "locals_and_dir.py",
+        "path": "locals_and_dir.py",
+        "size": 1259,
+        "type": "py"
+      },
+      {
+        "name": "main.py",
+        "path": "main.py",
+        "size": 2341,
+        "type": "py"
+      },
+      {
+        "name": "merge_conflict_handler.py",
+        "path": "merge_conflict_handler.py",
+        "size": 47046,
+        "type": "py"
+      },
+      {
+        "name": "merge_handler_integration.py",
+        "path": "merge_handler_integration.py",
+        "size": 10762,
+        "type": "py"
+      },
+      {
+        "name": "micro_robot_composite.py",
+        "path": "micro_robot_composite.py",
+        "size": 1253,
+        "type": "py"
+      },
+      {
+        "name": "model_builder.py",
+        "path": "model_builder.py",
+        "size": 4101,
+        "type": "py"
+      },
+      {
+        "name": "model_notification_system.py",
+        "path": "model_notification_system.py",
+        "size": 18060,
+        "type": "py"
+      },
+      {
+        "name": "model_test_visualization.py",
+        "path": "model_test_visualization.py",
+        "size": 30474,
+        "type": "py"
+      },
+      {
+        "name": "modern_agent_gui.py",
+        "path": "modern_agent_gui.py",
+        "size": 34827,
+        "type": "py"
+      },
+      {
+        "name": "module_checker.py",
+        "path": "module_checker.py",
+        "size": 1158,
+        "type": "py"
+      },
+      {
+        "name": "notification_module.py",
+        "path": "notification_module.py",
+        "size": 12422,
+        "type": "py"
+      },
+      {
+        "name": "o3de_simulation_instructions.py",
+        "path": "o3de_simulation_instructions.py",
+        "size": 3488,
+        "type": "py"
+      },
+      {
+        "name": "package_update_checker.py",
+        "path": "package_update_checker.py",
+        "size": 32702,
+        "type": "py"
+      },
+      {
+        "name": "parallel_execution_demo.py",
+        "path": "parallel_execution_demo.py",
+        "size": 4817,
+        "type": "py"
+      },
+      {
+        "name": "parallel_execution_gui.py",
+        "path": "parallel_execution_gui.py",
+        "size": 32561,
+        "type": "py"
+      },
+      {
+        "name": "parallel_execution_integration.py",
+        "path": "parallel_execution_integration.py",
+        "size": 5855,
+        "type": "py"
+      },
+      {
+        "name": "parallel_execution_webhook.py",
+        "path": "parallel_execution_webhook.py",
+        "size": 6048,
+        "type": "py"
+      },
+      {
+        "name": "parallel_gui_integration.py",
+        "path": "parallel_gui_integration.py",
+        "size": 5473,
+        "type": "py"
+      },
+      {
+        "name": "parallel_system_integration.py",
+        "path": "parallel_system_integration.py",
+        "size": 12637,
+        "type": "py"
+      },
+      {
+        "name": "pending_methods.py",
+        "path": "pending_methods.py",
+        "size": 8622,
+        "type": "py"
+      },
+      {
+        "name": "pip_list_output.py",
+        "path": "pip_list_output.py",
+        "size": 1273,
+        "type": "py"
+      },
+      {
+        "name": "project_tasks_priority_list.py",
+        "path": "project_tasks_priority_list.py",
+        "size": 1307,
+        "type": "py"
+      },
+      {
+        "name": "python_indentation_fix.py",
+        "path": "python_indentation_fix.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "refined_model_demo.py",
+        "path": "refined_model_demo.py",
+        "size": 5829,
+        "type": "py"
+      },
+      {
+        "name": "refined_model_integration.py",
+        "path": "refined_model_integration.py",
+        "size": 22792,
+        "type": "py"
+      },
+      {
+        "name": "refined_model_report.py",
+        "path": "refined_model_report.py",
+        "size": 17103,
+        "type": "py"
+      },
+      {
+        "name": "run_agent1_part1_in_blender.py",
+        "path": "run_agent1_part1_in_blender.py",
+        "size": 4021,
+        "type": "py"
+      },
+      {
+        "name": "run_blender_agent.py",
+        "path": "run_blender_agent.py",
+        "size": 6027,
+        "type": "py"
+      },
+      {
+        "name": "run_bridge.py",
+        "path": "run_bridge.py",
+        "size": 8808,
+        "type": "py"
+      },
+      {
+        "name": "run_bridge_v2.py",
+        "path": "run_bridge_v2.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "run_bridge_v3.py",
+        "path": "run_bridge_v3.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "run_enhanced_gui.py",
+        "path": "run_enhanced_gui.py",
+        "size": 753,
+        "type": "py"
+      },
+      {
+        "name": "run_enhanced_model.py",
+        "path": "run_enhanced_model.py",
+        "size": 10853,
+        "type": "py"
+      },
+      {
+        "name": "run_ggg_gui.py",
+        "path": "run_ggg_gui.py",
+        "size": 9685,
+        "type": "py"
+      },
+      {
+        "name": "run_gui.py",
+        "path": "run_gui.py",
+        "size": 585,
+        "type": "py"
+      },
+      {
+        "name": "run_gui_with_errors.py",
+        "path": "run_gui_with_errors.py",
+        "size": 153,
+        "type": "py"
+      },
+      {
+        "name": "scheduled_model_tester.py",
+        "path": "scheduled_model_tester.py",
+        "size": 10728,
+        "type": "py"
+      },
+      {
+        "name": "search_file_contents_in_this_folder_for_a_searchTextString.py",
+        "path": "search_file_contents_in_this_folder_for_a_searchTextString.py",
+        "size": 2583,
+        "type": "py"
+      },
+      {
+        "name": "search_model_notification.py",
+        "path": "search_model_notification.py",
+        "size": 2270,
+        "type": "py"
+      },
+      {
+        "name": "setup.py",
+        "path": "setup.py",
+        "size": 14362,
+        "type": "py"
+      },
+      {
+        "name": "setup_image_processing.py",
+        "path": "setup_image_processing.py",
+        "size": 4263,
+        "type": "py"
+      },
+      {
+        "name": "simple_blender_test.py",
+        "path": "simple_blender_test.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "simulation_generator.py",
+        "path": "simulation_generator.py",
+        "size": 1759,
+        "type": "py"
+      },
+      {
+        "name": "start_agent_mode_cli.py",
+        "path": "start_agent_mode_cli.py",
+        "size": 23700,
+        "type": "py"
+      },
+      {
+        "name": "start_refined_model_agents.py",
+        "path": "start_refined_model_agents.py",
+        "size": 8853,
+        "type": "py"
+      },
+      {
+        "name": "terminate_status.py",
+        "path": "terminate_status.py",
+        "size": 591,
+        "type": "py"
+      },
+      {
+        "name": "test_123.py",
+        "path": "test_123.py",
+        "size": 422,
+        "type": "py"
+      },
+      {
+        "name": "test_all_imports.py",
+        "path": "test_all_imports.py",
+        "size": 1629,
+        "type": "py"
+      },
+      {
+        "name": "test_auto_refinement.py",
+        "path": "test_auto_refinement.py",
+        "size": 6487,
+        "type": "py"
+      },
+      {
+        "name": "test_git_integration.py",
+        "path": "test_git_integration.py",
+        "size": 2244,
+        "type": "py"
+      },
+      {
+        "name": "test_import.py",
+        "path": "test_import.py",
+        "size": 477,
+        "type": "py"
+      },
+      {
+        "name": "test_model_requirements.py",
+        "path": "test_model_requirements.py",
+        "size": 6652,
+        "type": "py"
+      },
+      {
+        "name": "test_parallel_execution.py",
+        "path": "test_parallel_execution.py",
+        "size": 10462,
+        "type": "py"
+      },
+      {
+        "name": "test_parallel_webhook.py",
+        "path": "test_parallel_webhook.py",
+        "size": 2553,
+        "type": "py"
+      },
+      {
+        "name": "test_pil.py",
+        "path": "test_pil.py",
+        "size": 0,
+        "type": "py"
+      },
+      {
+        "name": "update_agent_config.py",
+        "path": "update_agent_config.py",
+        "size": 5089,
+        "type": "py"
+      },
+      {
+        "name": "upkgs.py",
+        "path": "upkgs.py",
+        "size": 5932,
+        "type": "py"
+      },
+      {
+        "name": "url_request_1.py",
+        "path": "url_request_1.py",
+        "size": 9598,
+        "type": "py"
+      },
+      {
+        "name": "verifyExists.py",
+        "path": "verifyExists.py",
+        "size": 603,
+        "type": "py"
+      },
+      {
+        "name": "webhook_receiver.py",
+        "path": "webhook_receiver.py",
+        "size": 4764,
+        "type": "py"
+      },
+      {
+        "name": "whoami_owner.py",
+        "path": "whoami_owner.py",
+        "size": 5562,
+        "type": "py"
+      }
+    ],
+    "ai_managers": [
+      {
+        "name": "README.md",
+        "path": "ai_managers\\README.md",
+        "size": 1722,
+        "type": "md"
+      },
+      {
+        "name": "README_PARALLEL_EXECUTION.md",
+        "path": "ai_managers\\README_PARALLEL_EXECUTION.md",
+        "size": 3369,
+        "type": "md"
+      },
+      {
+        "name": "__init__.py",
+        "path": "ai_managers\\__init__.py",
+        "size": 1673,
+        "type": "py"
+      },
+      {
+        "name": "documentation_summarizer.py",
+        "path": "ai_managers\\documentation_summarizer.py",
+        "size": 16131,
+        "type": "py"
+      },
+      {
+        "name": "git_task_manager.py",
+        "path": "ai_managers\\git_task_manager.py",
+        "size": 10635,
+        "type": "py"
+      },
+      {
+        "name": "parallel_execution_manager.py",
+        "path": "ai_managers\\parallel_execution_manager.py",
+        "size": 32041,
+        "type": "py"
+      },
+      {
+        "name": "project_ai_manager.py",
+        "path": "ai_managers\\project_ai_manager.py",
+        "size": 4784,
+        "type": "py"
+      },
+      {
+        "name": "project_resource_manager.py",
+        "path": "ai_managers\\project_resource_manager.py",
+        "size": 27536,
+        "type": "py"
+      },
+      {
+        "name": "refined_model_manager.py",
+        "path": "ai_managers\\refined_model_manager.py",
+        "size": 3325,
+        "type": "py"
+      },
+      {
+        "name": "scheduled_tasks_manager.py",
+        "path": "ai_managers\\scheduled_tasks_manager.py",
+        "size": 25701,
+        "type": "py"
+      },
+      {
+        "name": "task_manager.py",
+        "path": "ai_managers\\task_manager.py",
+        "size": 11840,
+        "type": "py"
+      }
+    ],
+    "gui": [
+      {
+        "name": "GUI_README.md",
+        "path": "gui\\GUI_README.md",
+        "size": 2129,
+        "type": "md"
+      },
+      {
+        "name": "GUI_STRUCTURE.md",
+        "path": "gui\\GUI_STRUCTURE.md",
+        "size": 4821,
+        "type": "md"
+      },
+      {
+        "name": "README.md",
+        "path": "gui\\README.md",
+        "size": 4102,
+        "type": "md"
+      },
+      {
+        "name": "gui_create_shortcut.ps1",
+        "path": "gui\\gui_create_shortcut.ps1",
+        "size": 3193,
+        "type": "ps1"
+      },
+      {
+        "name": "gui_organize_files.ps1",
+        "path": "gui\\gui_organize_files.ps1",
+        "size": 0,
+        "type": "ps1"
+      },
+      {
+        "name": "gui_enhanced.py",
+        "path": "gui\\gui_enhanced.py",
+        "size": 59835,
+        "type": "py"
+      },
+      {
+        "name": "gui_implementation.py",
+        "path": "gui\\gui_implementation.py",
+        "size": 41046,
+        "type": "py"
+      },
+      {
+        "name": "gui_launcher.py",
+        "path": "gui\\gui_launcher.py",
+        "size": 10623,
+        "type": "py"
+      },
+      {
+        "name": "gui_main.py",
+        "path": "gui\\gui_main.py",
+        "size": 114453,
+        "type": "py"
+      },
+      {
+        "name": "gui_selector.py",
+        "path": "gui\\gui_selector.py",
+        "size": 6117,
+        "type": "py"
+      },
+      {
+        "name": "gui_styles.py",
+        "path": "gui\\gui_styles.py",
+        "size": 12525,
+        "type": "py"
+      },
+      {
+        "name": "system_chart_tab.py",
+        "path": "gui\\system_chart_tab.py",
+        "size": 9494,
+        "type": "py"
+      }
+    ],
+    "scripts": [
+      {
+        "name": "Activate.ps1",
+        "path": "scripts\\Activate.ps1",
+        "size": 27969,
+        "type": "ps1"
+      },
+      {
+        "name": "pywin32_postinstall.py",
+        "path": "scripts\\pywin32_postinstall.py",
+        "size": 25736,
+        "type": "py"
+      },
+      {
+        "name": "pywin32_testall.py",
+        "path": "scripts\\pywin32_testall.py",
+        "size": 3847,
+        "type": "py"
+      }
+    ]
+  },
+  "readme_files": {
+    "README.md": {
+      "summary": "# GlowingGoldenGlobe Project\n## Comprehensive ASI Micro-Robot-Composite Humanoid Workforce System\n\n\n### Project Overview\nGlowingGoldenGlobe is a comprehensive project aimed at developing ASI (Artificial Superintelligent) micro-robot-composite humanoid workforce robots capable of performing real-world labor. The proje...\n\n### Quick Start\nTo begin working with the GlowingGoldenGlobe system:\n\n### Project Objectives\nThe GlowingGoldenGlobe project has 17 primary objectives as outlined in `Objectives_1.py`, including:\n\n### Project Structure\n- **AI Agent Systems**:\n  - `AI_Agent_1/` - Micro-robot-composite part development\n  - `AI_Agent_2/` - Humanoid torso development\n  - `AI_Agent_3/` - Head and neck development\n  - `AI_Agent_4/` - S...\n\n### AI Manager Architecture\nThis project uses a specialized AI Manager architecture where multiple specialized AI systems collaborate to achieve complex objectives. See `AI_MANAGER_CONCEPT.md` for detailed explanation.\n\n### Error Handling & Automated AI Workflow\nThe project features a robust error handling system that enables continuous operation:\n\n### Parallel Execution System\nThe project includes a sophisticated Parallel Execution Manager that coordinates multiple AI Manager roles:\n\n### System Requirements",
+      "last_modified": 1747164771.5271199,
+      "size": 7359
+    },
+    "gui\\GUI_README.md": {
+      "summary": "# GlowingGoldenGlobe GUI System\n## Overview\nThis folder contains all files related to the GlowingGoldenGlobe GUI system, which provides a graphical interface for managing the Agent Mode with both sequential and parallel execution support.\n\n## File Organization\n\n\n### Core GUI Files\n- `gui_main.py` - The main GUI implementation file\n- `gui_styles.py` - CSS styles and theme settings for the GUI\n- `gui_config.json` - Configuration settings for the GUI\n\n### Launchers\n- `gui_launcher.py` - Smart launcher that selects the best GUI implementation\n- `gui_launcher.pyw` - Windowless version of the launcher\n- `gui_launcher.bat` - Windows batch file launcher\n\n### Shortcuts\n- `gui_create_shortcut.ps1` - PowerShell script to create desktop shortcuts\n- `gui_shortcut_parallel.ps1` - PowerShell script for parallel agent mode shortcuts\n\n### Resources\n- `gui_icons/` - Folder containing all icon resources for the GUI\n  - `app_icon.ico` - Main application icon\n  - `app_icon_32.png` - 32x32 icon\n  - `app_icon_64.png` - 64x64 icon\n  - `app_icon_128....\n\n## Usage\nTo launch the GUI:\n\n## Features\n- Modern UI with responsive design\n- Support for both sequential and parallel agent mode execution\n- Real-time resource monitoring\n- Task scheduling and management\n- Configuration editor\n- Version ...\n\n## Customization\nThe GUI appearance can be customized by editing `gui_styles.py`. Configuration settings can be modified through the UI or by directly editing `gui_config.json`.\n\n## Requirements\n- Python 3.8+\n- Tkinter\n- Required Python packages as specified in the main project requirements.txt\n\n## Troubleshooting\nIf the GUI fails to launch:\n\n## Last Updated",
+      "last_modified": 1747349714.23765,
+      "size": 2129
+    },
+    "README_MODULAR.md": {
+      "summary": "# GlowingGoldenGlobe - Automated AI Workflow\n## Overview\nThis project implements a robust AI-driven workflow for creating and testing 3D micro-robot-composite parts. The system leverages VS Code Agent Mode, Blender integration, and advanced error handlin...\n\n## Key Features\n- **Resilient Error Handling**: Automatic detection and recovery from common errors\n- **LLM-Assisted Problem Solving**: Uses Claude 3.7 Sonnet to analyze and fix complex errors\n- **Continuous Opera...\n\n## System Architecture\nThe project consists of several core components:\n\n## Automated AI Workflow\nThe system implements a continuous \"(1) Run \u2192 (2) R&D \u2192 (3) Solve \u2192 Repeat\" workflow:\n\n### 1. Run\nThe system executes tasks without requiring constant human intervention. When started, it:\n- Sets up the necessary environment\n- Loads model data and configurations\n- Begins execution of the define...\n\n### 2. Research & Development\nThe system actively:\n- Monitors execution for errors and performance issues\n- Collects diagnostic information when problems occur\n- Identifies patterns in issues to prevent recurrence\n- Gathers con...\n\n### 3. Solve\nWhen issues arise, the system:\n- Handles common errors automatically using specialized handlers\n- Consults the LLM (Claude 3.7 Sonnet) for complex issues\n- Applies code fixes and configuration chan...\n\n### Repeat\nThe system then:\n- Returns to execution with improved code/configuration\n- Tracks successful recovery methods\n- Continues the workflow loop until completion\n- Provides detailed logs and reports of ...\n\n## Execution Modes\nThe project supports multiple execution modes:\n\n### 1. Standard Agent Mode\n```powershell\n$env:VSCODE_AGENT_MODE=\"true\"; python Agent1_Part1.py\n```\nFeatures basic error detection and handling. Good for most use cases.\n\n### 2. Resilient Agent Mode (Recommended)\n```powershell\n$env:VSCODE_AGENT_MODE=\"true\"; $env:RESILIENT_AGENT_MODE=\"true\"; python Agent1_Part1.py\n```\nIncludes advanced LLM-assisted error recovery. Provides maximum reliability and autonomy.\n\n### 3. Direct Mode\n```powershell\npython Agent1_Part1.py\n```\nFor simple execution without Agent Mode features. Falls back to Autogen mode if available.\n\n## Error Handling System\nThe error handling system is designed to \"surmount problems via solutions, automatically\" and consists of multiple layers:\n\n## Using the GUI\nThe Agent Mode GUI provides a user-friendly interface for interacting with the system:\n\n## Testing the Error Handling System\nA test script is provided to demonstrate the error handling capabilities:\n\n## Configuration\n\n\n### LLM Integration\nSet your API key to enable LLM-assisted error recovery:\n\n### Customizing Error Handlers\nEdit the helper functions in agent_mode.py to customize how specific errors are handled.\n\n## Best Practices\n1. **Always use Resilient Agent Mode** for complex tasks\n2. Keep the Anthropic API key configured for maximum resilience\n3. Use the error_decorator on critical functions\n4. Check error logs periodi...\n\n## Troubleshooting\n\n\n### Common Issues\n1. **Agent Mode stops on error**\n   - Ensure RESILIENT_AGENT_MODE is set to \"true\"\n   - Verify the Anthropic API key is correctly set\n\n## Examples\n\n\n### Adding error handling to your functions\n```python\nfrom simple_error_reporter import error_decorator\n\n### Using the error handling system in scripts\n```python\nfrom simple_error_reporter import check_for_errors, get_error_context, clear_error_report\n\n## Documentation",
+      "last_modified": 1747118678.2408898,
+      "size": 6727
+    },
+    "RESOURCE_MANAGEMENT.md": {
+      "summary": "# Resource Management in GlowingGoldenGlobe\n## Resource Management Architecture\n\n\n### AI Manager for Resource Management\nThe `project_resource_manager.py` module is a specialized AI manager responsible for making decisions about hardware resources. This manager:\n\n### Implementation Modules\n\n\n#### Hardware Monitoring\nThe `hardware_monitor.py` implementation module continuously tracks system resource usage including:\n\n### Emergency Resource Handling\nWhen resources exceed critical thresholds (typically 95%), the system:\n\n#### GPU Detection\nThe `check_gpu_for_blender.py` implementation module is responsible for detecting GPU capabilities and reporting this information to the Resource AI Manager:\n\n## GPU Rendering Optimization\nThe project uses Blender for 3D rendering with optimized GPU acceleration. These implementation modules don't make decisions independently but follow the Resource AI Manager's directives:\n\n### GPU Configuration Implementation\n```python\n\n### Dynamic Sample Adjustment\nThe system dynamically adjusts sample counts based on available rendering resources:\n\n### Multi-Machine Rendering Coordination\nFor complex rendering tasks, the system can distribute rendering across multiple machines:\n\n## Using the Resource Management System\n\n\n### AI Manager Configuration\nEdit the `resource_manager_config.json` file to set custom thresholds and policies for the Resource AI Manager:\n\n### Monitoring Resource Usage\nResource usage can be monitored through:\n\n### Adding Additional Machines\nTo add additional machines to the resource pool:\n\n## Troubleshooting\n\n\n### Common Issues\n1. **GPU not detected**: Ensure CUDA drivers are installed and up-to-date\n2. **Resource manager not connecting**: Check network settings and firewall configurations\n3. **Emergency stops too frequen...\n\n### Log Files\nImportant log files for troubleshooting:\n\n## Best Practices",
+      "last_modified": 1747118678.2408898,
+      "size": 5852
+    },
+    "ai_managers\\README_PARALLEL_EXECUTION.md": {
+      "summary": "# Parallel Execution Manager\n## Overview\nThe Parallel Execution Manager is a specialized AI Manager for the GlowingGoldenGlobe project that coordinates multiple AI Manager roles to run simultaneously while respecting hardware resource lim...\n\n## Key Features\n- **Multi-Role Coordination**: Runs different AI Manager roles simultaneously based on priority\n- **Resource Monitoring**: Continuously monitors CPU, memory, and disk usage\n- **Adaptive Scaling**: ...\n\n## Defined Roles\nThe Parallel Execution Manager coordinates six key roles:\n\n## Configuration\nThe system is configured through `parallel_execution_config.json`, which defines:\n\n## Usage\n\n\n### Basic Usage\n```python\nfrom ai_managers.parallel_execution_manager import ParallelExecutionManager\n\n### Starting Specific Roles\nTo start only specific roles:\n\n## Resource Requirements\nThe Parallel Execution Manager requires:\n\n## Extending the Manager\nTo add a new role:\n\n## Integration with Existing Systems",
+      "last_modified": 1747162753.8205981,
+      "size": 3369
+    },
+    "ai_managers\\README.md": {
+      "summary": "# AI Managers Directory\n## What is an AI Manager?\nAs defined in `AI_MANAGER_CONCEPT.md`:\n\n## Available AI Managers\n- **Project AI Manager** (`project_ai_manager.py`): Orchestrates overall project activities and makes project-level decisions\n- **Resource AI Manager** (`project_resource_manager.py`): Assesses har...\n\n## Integration",
+      "last_modified": 1747161057.8910947,
+      "size": 1722
+    }
+  },
+  "gui_files": {
+    "GUI_Structure.md": {
+      "summary": "# GlowingGoldenGlobe GUI System Structure\n## Overview\nThis document provides comprehensive information about the GlowingGoldenGlobe GUI system folder structure, file naming conventions, and organization. This guide is intended for developers working w...\n\n## Folder Structure\nAll GUI-related files are now organized in a dedicated `gui` folder with a standardized naming convention using the `gui_` prefix:\n\n## File Naming Convention\nThe new naming convention follows these rules:\n\n### Core Files\n| New Name | Original Name | Purpose |\n|----------|---------------|---------|\n| `gui_launcher.py` | (New file) | Main entry point that selects the best available GUI version |\n| `gui_main.py` | `ag...\n\n## Launcher System\nThe `gui_launcher.py` script serves as the main entry point for the GUI system. It:\n\n## GUI Variants\nThe system includes multiple GUI versions with different feature sets:\n\n## Shortcut Creation\nDesktop shortcuts can be created using the `gui_create_shortcut.ps1` PowerShell script, which:\n\n## Migration Notes\nWhen migrating code from the old system to the new structure:\n\n## Best Practices\nWhen modifying or extending the GUI:\n\n## Troubleshooting",
+      "last_modified": 1747358627.1494665,
+      "size": 4821
+    }
+  },
+  "scripts": {
+    "Test-GUIFunctionality.ps1": {
+      "summary": "# PowerShell Script: Test-GUIFunctionality.ps1\nTest-GUIFunctionality.ps1\nThis script helps test the GUI functionality to ensure all features work as expected\nDefine constants\n",
+      "last_modified": 1747358627.1608431,
+      "size": 7490
+    },
+    "Update-GUIShortcuts.ps1": {
+      "summary": "# PowerShell Script: Update-GUIShortcuts.ps1\nUpdate-GUIShortcuts.ps1\nThis script updates existing desktop shortcuts to point to the new gui_launcher.py location\nDefine constants\n",
+      "last_modified": 1747358627.1608431,
+      "size": 4141
+    },
+    "AI_Agent_1\\Agent1_Part1.py": {
+      "summary": "## Class: ProjectObjectivesMock\nNo description\n\n## Class: FallbackObjectives\nNo description\n\n### Function: get_terminate_status\nNo description\n\n### Function: check_required_software\nCreate a suggestions file for missing software\n\n### Function: run_direct_execution\nMain function to choose and execute the appropriate mode\n",
+      "last_modified": 1747118675.741194,
+      "size": 20682
+    }
+  },
+  "last_updated": "2025-05-15T21:08:30.520670"
+}

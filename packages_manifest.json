@@ -1,0 +1,248 @@
+{
+  "manifest_version": "1.0",
+  "project": "GlowingGoldenGlobe",
+  "created_date": "2025-05-23",
+  "author": {
+    "name": "Richard Isaac Craddock",
+    "phone": "251-888-1602",
+    "email": "craddock338@gmail.com"
+  },
+  "packages": {
+    "user_invented": {
+      "code_pre_api_compiler": {
+        "name": "Code Pre-API Input Compiler",
+        "version": "1.0",
+        "description": "Reduces whitespace, line breaks, comments; compiles to bytes",
+        "features": [
+          "Less white spaces",
+          "Less line breaks",
+          "Less comments",
+          "Readme summary generation",
+          "Option to add all files",
+          "Compile to byte programming language syntax",
+          "Mirror project folder creation",
+          "Option to skip byte compilation"
+        ],
+        "files": [
+          "code_pre_api_compiler.py",
+          "compiler_config.json"
+        ]
+      },
+      "error_handler": {
+        "name": "Error Handler Package",
+        "version": "1.0",
+        "description": "Simple error handling system",
+        "created_by": "VS Code Agent mode model Claude 3.7 Sonnet",
+        "files": [
+          "simple_error_reporter.py",
+          "error_handling_guide.md"
+        ]
+      },
+      "ai_automated_workflow": {
+        "name": "AI Automated Workflow Package",
+        "version": "2.0",
+        "description": "Complete autonomous workflow system",
+        "components": [
+          "error_handler",
+          "task_scheduler",
+          "project_ai_managers",
+          "hardware_monitor",
+          "gui_parallel_workflow",
+          "config_ai_agent_memory",
+          "parallel_agents_conflict_prevention",
+          "llm_memory_cpuo_system"
+        ],
+        "files": [
+          "enhanced_project_ai_manager_v2.py",
+          "workflow_integrity_manager.py",
+          "ai_workflow_status.json"
+        ]
+      },
+      "task_scheduler": {
+        "name": "Tasks Scheduler Plus To-Do List Package",
+        "version": "1.0",
+        "description": "Task scheduling and to-do management",
+        "files": [
+          "realtime_task_manager.py",
+          "enhanced_scheduled_tasks.py",
+          "task_modifications_log.json"
+        ]
+      },
+      "project_ai_managers": {
+        "name": "Project AI Managers Package",
+        "version": "1.0",
+        "description": "AI manager coordination system",
+        "files": [
+          "project_ai_manager.py",
+          "task_manager.py",
+          "parallel_execution_manager.py",
+          "resource_manager.py",
+          "message_handler_integration.py"
+        ]
+      },
+      "hardware_monitor": {
+        "name": "Hardware Monitor Package",
+        "version": "1.0",
+        "description": "System resource monitoring",
+        "files": [
+          "hardware_monitor.py",
+          "hardware_monitor_config.json",
+          "windows_resource_monitor.py"
+        ]
+      },
+      "gui_parallel_workflow": {
+        "name": "GUI Parallel Workflow AI Automation Manager",
+        "version": "2.0",
+        "description": "GUI integration for parallel AI automation",
+        "files": [
+          "gui_workflow_integration_patch_v2.py",
+          "claude_parallel_realtime.py",
+          "ai_workflow_status_indicators.py"
+        ]
+      },
+      "config_ai_agent_memory": {
+        "name": "Config AI Agent Memory Package",
+        "version": "1.0",
+        "description": "AI agent configuration and memory management",
+        "special_feature": "Restricted Automation Mode with contingency read attribute",
+        "files": [
+          "CLAUDE.md",
+          "claude_memory.py",
+          "restricted_automation_schema.json",
+          "auto_conflict_handler.py"
+        ]
+      },
+      "parallel_agents_conflict_prevention": {
+        "name": "Parallel AI Agents Conflict Prevention Package",
+        "version": "1.0",
+        "description": "Prevents conflicts between parallel AI operations",
+        "files": [
+          "session_conflict_manager.py",
+          "session_detector.py",
+          "file_usage_tracker.py"
+        ]
+      },
+      "llm_memory_cpuo_system": {
+        "name": "LLM Memory CPUO System",
+        "version": "1.0",
+        "description": "Contents-Procedure-Utils-Options framework for improvements",
+        "created_date": "2025-05-23",
+        "files": [
+          "project_improvement_procedure.py",
+          "cross_reference_manager.py",
+          "PROJECT_IMPROVEMENT_PROCEDURE_GUIDE.md"
+        ]
+      }
+    },
+    "project_developed": {
+      "workflow_integrity": {
+        "name": "Workflow Integrity Manager",
+        "version": "1.0",
+        "description": "Validates and repairs workflow execution chains",
+        "files": [
+          "workflow_integrity_manager.py",
+          "workflow_validation_log.json"
+        ]
+      },
+      "interleaving_system": {
+        "name": "Interleaving System",
+        "version": "1.0",
+        "description": "Claude interleaving mode integration",
+        "files": [
+          "shared_claude_interleaving.py",
+          "interleaving_config_manager.py",
+          "interleaving_status_indicator.py"
+        ]
+      },
+      "model_management": {
+        "name": "Model Management System",
+        "version": "1.0",
+        "description": "3D model creation and management",
+        "files": [
+          "model_builder.py",
+          "enhanced_model_description_viewer.py",
+          "blender_bridge.py"
+        ]
+      },
+      "cloud_integration": {
+        "name": "Cloud Storage Integration",
+        "version": "1.0",
+        "description": "Cloud storage providers integration",
+        "files": [
+          "cloud_storage/cloud_storage_module.py",
+          "cloud_storage/aws_storage_provider.py",
+          "cloud_storage/azure_storage_provider.py"
+        ]
+      },
+      "ros2_integration": {
+        "name": "ROS2 Integration",
+        "version": "1.0",
+        "description": "Robot Operating System 2 integration",
+        "files": [
+          "ros2_integration/ros2_bridge.py",
+          "ros2_integration/component_interface.py",
+          "ros2_integration/message_types.py"
+        ]
+      }
+    },
+    "utilities": {
+      "testing_utilities": [
+        "test_ai_workflow_integration.py",
+        "test_gui_control_integration.py",
+        "test_installation.sh"
+      ],
+      "helper_utilities": [
+        "windows_path_converter.py",
+        "Files_Get_Dates_Created.py",
+        "Files_Run_In_Terminal.py",
+        "simple_duplicate_check.py",
+        "network_troubleshooter.py"
+      ],
+      "maintenance_utilities": [
+        "ggg_maintenance.py",
+        "ggg_maintenance_helper.py",
+        "assessment_based_cleanup.py",
+        "package_update_checker.py"
+      ]
+    }
+  },
+  "dependencies": {
+    "python": ">=3.8",
+    "core": [
+      "tkinter>=8.6.0",
+      "numpy>=1.22.0",
+      "anthropic>=0.25.0",
+      "python-dotenv>=1.0.0"
+    ],
+    "optional": [
+      "opencv-python>=4.5.0",
+      "matplotlib>=3.5.0",
+      "pillow>=9.0.0",
+      "pyyaml>=6.0.0",
+      "requests>=2.27.0",
+      "psutil>=5.9.0",
+      "open3d>=0.17.0",
+      "blender>=3.0"
+    ],
+    "development": [
+      "pyautogen>=0.2.26",
+      "flask>=2.0.0",
+      "pytest>=7.0.0"
+    ]
+  },
+  "division_compatibility": {
+    "supported_divisions": [
+      "glowinggoldenglobe.com",
+      "glowinggoldenglobe.w3spaces.com/ai",
+      "local_development_venv",
+      "cloud_deployment",
+      "edge_computing_nodes"
+    ],
+    "integration_points": [
+      "ai_managers/__init__.py",
+      "gui/gui_main.py",
+      "utils/__init__.py",
+      "CLAUDE.md"
+    ]
+  }
+}

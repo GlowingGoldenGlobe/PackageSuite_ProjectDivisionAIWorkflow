@@ -1,0 +1,6 @@
+Current Error (2025-05-22 05:06:38):
+Test error with LogManager
+Key traceback lines:
+NameError: test managed error
+
+Full error history: gui_launcher_error_log.txt

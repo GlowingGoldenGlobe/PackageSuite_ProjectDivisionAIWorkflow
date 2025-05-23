@@ -1,0 +1,20 @@
+{
+  "email_notifications": false,
+  "desktop_notifications": true,
+  "max_notifications": 100,
+  "log_file": "model_notifications.jsonl",
+  "email_config": {
+    "smtp_server": "",
+    "smtp_port": 587,
+    "username": "",
+    "password": "",
+    "from_address": "",
+    "to_addresses": []
+  },
+  "notification_levels": [
+    "success",
+    "error",
+    "warning",
+    "info"
+  ]
+}

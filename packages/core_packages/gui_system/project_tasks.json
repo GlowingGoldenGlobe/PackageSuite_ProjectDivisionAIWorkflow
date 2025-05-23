@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "id": "6739a746-f006-47bb-a275-9bbbb78efd6f",
+      "title": "Install psutil package for full hardware monitoring",
+      "description": "Run 'pip install psutil' to enable complete hardware monitoring functionality in the GUI.",
+      "category": "Development",
+      "priority": "Medium",
+      "created_date": "2025-05-17T13:25:39.995706",
+      "due_date": "2025-05-17",
+      "completed": true,
+      "completed_date": "2025-05-18T00:00:00.000000"
+    }
+  ],
+  "schedules": [],
+  "categories": [
+    "Development",
+    "Testing",
+    "Research",
+    "Documentation",
+    "Other"
+  ],
+  "priority_levels": [
+    "Low",
+    "Medium",
+    "High",
+    "Critical"
+  ],
+  "last_updated": "2025-05-18T00:00:00.000000"
+}

@@ -1,0 +1,123 @@
+{
+  "utilities": {
+    "assessment_based_cleanup": {
+      "file": "assessment_based_cleanup.py",
+      "imports": [],
+      "references": [],
+      "category": "general",
+      "created": "2025-05-21T21:56:24.824222"
+    },
+    "chart_generator": {
+      "file": "chart_generator.py",
+      "imports": [],
+      "references": [],
+      "category": "general",
+      "created": "2025-05-13T01:44:38.534456"
+    },
+    "clipboard_workflow": {
+      "file": "clipboard_workflow.py",
+      "imports": [],
+      "references": [
+        "assessment_based_cleanup"
+      ],
+      "category": "workflow",
+      "created": "2025-05-21T21:25:28.911554"
+    },
+    "cross_reference_manager": {
+      "file": "cross_reference_manager.py",
+      "imports": [
+        "' in line or 'import utils.' in line]",
+        "' in line:",
+        "')[1].split('"
+      ],
+      "references": [
+        "project_improvement_procedure"
+      ],
+      "category": "workflow",
+      "created": "2025-05-23T16:31:18.281849"
+    },
+    "network_troubleshooter": {
+      "file": "network_troubleshooter.py",
+      "imports": [],
+      "references": [],
+      "category": "general",
+      "created": "2025-05-19T05:40:26.188347"
+    },
+    "project_improvement_procedure": {
+      "file": "project_improvement_procedure.py",
+      "imports": [],
+      "references": [
+        "testing_utility_20250523"
+      ],
+      "category": "general",
+      "created": "2025-05-23T16:27:45.008467",
+      "special_role": "Central coordinator for all improvement requests. Automatically creates utilities and links them together.",
+      "is_hub": true
+    },
+    "simple_duplicate_check": {
+      "file": "simple_duplicate_check.py",
+      "imports": [],
+      "references": [],
+      "category": "testing",
+      "created": "2025-05-17T05:48:09.722835"
+    },
+    "testing_utility_20250523": {
+      "file": "testing_utility_20250523.py",
+      "imports": [],
+      "references": [],
+      "category": "testing",
+      "created": "2025-05-23T16:30:09.227216"
+    }
+  },
+  "categories": {
+    "workflow": [
+      "clipboard_workflow",
+      "cross_reference_manager"
+    ],
+    "testing": [
+      "simple_duplicate_check",
+      "testing_utility_20250523"
+    ],
+    "gui": [],
+    "integration": [],
+    "monitoring": []
+  },
+  "relationships": [
+    {
+      "from": "clipboard_workflow",
+      "to": "assessment_based_cleanup",
+      "type": "references",
+      "strength": "weak"
+    },
+    {
+      "from": "cross_reference_manager",
+      "to": "' in line or 'import utils.' in line]",
+      "type": "imports",
+      "strength": "strong"
+    },
+    {
+      "from": "cross_reference_manager",
+      "to": "' in line:",
+      "type": "imports",
+      "strength": "strong"
+    },
+    {
+      "from": "cross_reference_manager",
+      "to": "')[1].split('",
+      "type": "imports",
+      "strength": "strong"
+    },
+    {
+      "from": "cross_reference_manager",
+      "to": "project_improvement_procedure",
+      "type": "references",
+      "strength": "weak"
+    },
+    {
+      "from": "project_improvement_procedure",
+      "to": "testing_utility_20250523",
+      "type": "references",
+      "strength": "weak"
+    }
+  ]
+}

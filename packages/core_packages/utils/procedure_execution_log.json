@@ -1,0 +1,87 @@
+[
+  {
+    "execution_id": "proc_20250523_162821",
+    "started_at": "2025-05-23T16:28:21.280801",
+    "cpuo": {
+      "contents": {
+        "summary": "Test the GUI workflow integration and ensure all controls work properly",
+        "request_type": "testing",
+        "affected_components": [
+          "gui",
+          "workflow",
+          "control"
+        ],
+        "user_requirements": []
+      },
+      "procedure": {
+        "steps": [
+          "Create test script",
+          "Run validation tests",
+          "Document test results"
+        ],
+        "validations": [],
+        "integration_points": []
+      },
+      "utils": {
+        "created": [
+          "utils/testing_utility_20250523.py"
+        ],
+        "modified": [],
+        "referenced": [
+          "utils/assessment_based_cleanup.py",
+          "utils/chart_generator.py",
+          "utils/clipboard_workflow.py"
+        ]
+      },
+      "options": {
+        "future_enhancements": [
+          "Add automated test scheduling",
+          "Create test report dashboard",
+          "Implement continuous testing"
+        ],
+        "alternative_approaches": [],
+        "related_features": []
+      }
+    },
+    "execution_results": {
+      "existing_implementations": [
+        "gui_dashboard_integration.py",
+        "gui_workflow_integration_patch.py",
+        "gui_workflow_integration_patch_v2.py",
+        "open3d_gui_integration.py",
+        "parallel_execution_gui.py",
+        "ai_workflow_integration.py",
+        "ai_workflow_status.py",
+        "gui_workflow_integration_patch.py",
+        "gui_workflow_integration_patch_v2.py",
+        "test_ai_workflow_integration.py",
+        "test_controls_visibility.py",
+        "test_gui_control_integration.py",
+        "ai_managers/ai_assessment_controls.py",
+        "gui/interleaving_task_controls.py",
+        "gui/simple_interleaving_controls.py"
+      ],
+      "steps_executed": [
+        {
+          "step": "Create test script",
+          "executed_at": "2025-05-23T16:30:09.136969",
+          "status": "completed"
+        },
+        {
+          "step": "Run validation tests",
+          "executed_at": "2025-05-23T16:30:09.136982",
+          "status": "completed"
+        },
+        {
+          "step": "Document test results",
+          "executed_at": "2025-05-23T16:30:09.136983",
+          "status": "completed"
+        }
+      ]
+    },
+    "created_artifacts": [
+      "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/utils/testing_utility_20250523.py",
+      "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/docs/OPTIONS_testing_20250523.md"
+    ]
+  }
+]
