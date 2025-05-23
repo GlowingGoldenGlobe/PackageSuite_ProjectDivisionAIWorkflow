@@ -34,3 +34,11 @@ temp/
 # PyInstaller
 *.manifest
 *.spec
+
+# SSH Keys - NEVER commit these
+ssh_public_key.txt
+ssh_private_key.txt
+*.pem
+*.key
+id_rsa*
+id_ed25519*
