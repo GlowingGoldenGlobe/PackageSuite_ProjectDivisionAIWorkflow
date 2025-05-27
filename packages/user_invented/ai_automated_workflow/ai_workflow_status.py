@@ -372,7 +372,7 @@ def detect_active_agents():
     """
     # List of agent folders to check
     agent_folders = []
-    for i in range(1, 6):  # Assuming AI_Agent_1 through AI_Agent_5
+    for i in range(1, 6):  # Assuming Div_AI_Agent_Focus_1 through Div_AI_Agent_Focus_5
         folder = os.path.join(AGENT_DIR, f"AI_Agent_{i}")
         if os.path.exists(folder) and os.path.isdir(folder):
             agent_folders.append((f"AI_Agent_{i}", folder))

@@ -296,7 +296,7 @@ class WorkingGUI:
         version_patterns = [
             "*_v*.json",
             "micro_robot_*_v*.blend",
-            "AI_Agent_1/*_v*.json"
+            "Div_AI_Agent_Focus_1/*_v*.json"
         ]
         
         versions = set()

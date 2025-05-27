@@ -72,7 +72,7 @@ class AISessionAssessmentControls:
         resources = self._check_system_resources()
         
         # Make interleaving decisions
-        for agent in ["AI_Agent_1", "AI_Agent_2", "AI_Agent_3", "AI_Agent_4", "AI_Agent_5"]:
+        for agent in ["Div_AI_Agent_Focus_1", "Div_AI_Agent_Focus_2", "Div_AI_Agent_Focus_3", "Div_AI_Agent_Focus_4", "Div_AI_Agent_Focus_5"]:
             agent_tasks = [t for t in tasks if t.get("agent") == agent]
             
             if agent_tasks:
@@ -150,23 +150,23 @@ class AISessionAssessmentControls:
         complex_tasks = sum(1 for t in tasks if "complex" in t.get("description", "").lower())
         
         # Agent-specific logic
-        if agent == "AI_Agent_1":  # 3D modeling
+        if agent == "Div_AI_Agent_Focus_1":  # 3D modeling
             # Use interleaving for complex geometry or optimization tasks
             return complex_tasks > 0 or complexity["high_complexity"] > 2
         
-        elif agent == "AI_Agent_2":  # Simulation
+        elif agent == "Div_AI_Agent_Focus_2":  # Simulation
             # Use interleaving for physics optimization
             return any("optim" in t.get("description", "").lower() for t in tasks)
         
-        elif agent == "AI_Agent_3":  # Utility
+        elif agent == "Div_AI_Agent_Focus_3":  # Utility
             # Generally doesn't need interleaving unless complex analysis
             return complexity["requires_extended_thinking"] > 1
         
-        elif agent == "AI_Agent_4":  # Testing
+        elif agent == "Div_AI_Agent_Focus_4":  # Testing
             # Use interleaving for test generation and debugging
             return any("debug" in t.get("description", "").lower() for t in tasks)
         
-        elif agent == "AI_Agent_5":  # Documentation
+        elif agent == "Div_AI_Agent_Focus_5":  # Documentation
             # Use interleaving for comprehensive documentation
             return len(tasks) > 3 or complexity["multi_step_reasoning"] > 0
         
@@ -193,10 +193,10 @@ class AISessionAssessmentControls:
         }
         
         # Adjust based on agent role
-        if agent == "AI_Agent_1":  # 3D modeling needs more resources
+        if agent == "Div_AI_Agent_Focus_1":  # 3D modeling needs more resources
             base_allocation["cpu_cores"] = 4
             base_allocation["memory_mb"] = 4096
-        elif agent == "AI_Agent_2":  # Simulation
+        elif agent == "Div_AI_Agent_Focus_2":  # Simulation
             base_allocation["cpu_cores"] = 3
             base_allocation["memory_mb"] = 3072
         
@@ -337,11 +337,11 @@ class AISessionAssessmentControls:
         
         # Agent capability mapping
         capabilities = {
-            "AI_Agent_1": ["model", "3d", "geometry", "mesh", "render"],
-            "AI_Agent_2": ["simulation", "physics", "dynamics", "optimize"],
-            "AI_Agent_3": ["utility", "convert", "process", "analyze"],
-            "AI_Agent_4": ["test", "validate", "debug", "verify"],
-            "AI_Agent_5": ["document", "report", "describe", "explain"]
+            "Div_AI_Agent_Focus_1": ["model", "3d", "geometry", "mesh", "render"],
+            "Div_AI_Agent_Focus_2": ["simulation", "physics", "dynamics", "optimize"],
+            "Div_AI_Agent_Focus_3": ["utility", "convert", "process", "analyze"],
+            "Div_AI_Agent_Focus_4": ["test", "validate", "debug", "verify"],
+            "Div_AI_Agent_Focus_5": ["document", "report", "describe", "explain"]
         }
         
         agent_caps = capabilities.get(agent, [])

@@ -46,7 +46,7 @@ class InterleavingConfigTab:
         self.global_locked.set(locked)
         
         # Agent settings
-        for agent in ["AI_Agent_1", "AI_Agent_2", "AI_Agent_3", "AI_Agent_4", "AI_Agent_5"]:
+        for agent in ["Div_AI_Agent_Focus_1", "Div_AI_Agent_Focus_2", "Div_AI_Agent_Focus_3", "Div_AI_Agent_Focus_4", "Div_AI_Agent_Focus_5"]:
             enabled, locked = self.config_manager.get_agent_setting(agent)
             self.agent_vars[agent] = tk.BooleanVar(value=enabled)
             self.agent_lock_vars[agent] = tk.BooleanVar(value=locked)
@@ -116,7 +116,7 @@ class InterleavingConfigTab:
         ttk.Label(agent_frame, text="Status", font=("Arial", 10, "bold")).grid(row=0, column=3, padx=5)
         
         # Agent controls
-        for i, agent in enumerate(["AI_Agent_1", "AI_Agent_2", "AI_Agent_3", "AI_Agent_4", "AI_Agent_5"], 1):
+        for i, agent in enumerate(["Div_AI_Agent_Focus_1", "Div_AI_Agent_Focus_2", "Div_AI_Agent_Focus_3", "Div_AI_Agent_Focus_4", "Div_AI_Agent_Focus_5"], 1):
             # Agent name
             ttk.Label(agent_frame, text=agent).grid(row=i, column=0, sticky="w", padx=5, pady=2)
             

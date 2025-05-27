@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-Parallel Task Example for AI_Agent_4 - Shoulders and Arms Development
+Parallel Task Example for Div_AI_Agent_Focus_4 - Shoulders and Arms Development
 
 This script demonstrates a task that can be run in parallel by the Claude Parallel
-execution system. It performs basic operations related to AI_Agent_4's responsibility
+execution system. It performs basic operations related to Div_AI_Agent_Focus_4's responsibility
 of humanoid shoulders and arms development.
 
 When run as part of a parallel execution:
@@ -29,7 +29,7 @@ logger = logging.getLogger("ParallelAgent4Task")
 
 # Base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-AGENT_DIR = os.path.join(BASE_DIR, "AI_Agent_4")
+AGENT_DIR = os.path.join(BASE_DIR, "Div_AI_Agent_Focus_4")
 OUTPUT_DIR = os.path.join(AGENT_DIR, "agent_outputs")
 
 # Ensure output directory exists
@@ -167,7 +167,7 @@ def main():
     model_id = f"arm_model_{int(time.time())}"
     
     # Run the simulation
-    logger.info(f"Starting parallel task for AI_Agent_4 with model_id: {model_id}")
+    logger.info(f"Starting parallel task for Div_AI_Agent_Focus_4 with model_id: {model_id}")
     
     try:
         # Perform the arm design simulation

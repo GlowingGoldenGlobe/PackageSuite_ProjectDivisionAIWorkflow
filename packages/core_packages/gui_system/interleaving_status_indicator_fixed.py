@@ -36,7 +36,7 @@ def add_status_indicators_fixed(parent_frame, row=1, column=0, columnspan=2):
     
     # Status content
     status_label = ttk.Label(status_frame, 
-                           text="🟢 Interleaving Enabled | Active: AI_Agent_1, AI_Agent_3",
+                           text="🟢 Interleaving Enabled | Active: Div_AI_Agent_Focus_1, Div_AI_Agent_Focus_3",
                            font=("Arial", 9))
     status_label.pack(pady=5)
     

@@ -56,13 +56,13 @@ class RealtimeTaskManager:
         """Map agent to its working folder"""
         # Map actual agents to folders
         agent_folder_map = {
-            'Claude-3-Opus': 'AI_Agent_1',
-            'Claude-3-Sonnet': 'AI_Agent_2',
-            'GPT-4': 'AI_Agent_3',
-            'VSCode-Agent': 'AI_Agent_4',
-            'Terminal-Agent': 'AI_Agent_5'
+            'Claude-3-Opus': 'Div_AI_Agent_Focus_1',
+            'Claude-3-Sonnet': 'Div_AI_Agent_Focus_2',
+            'GPT-4': 'Div_AI_Agent_Focus_3',
+            'VSCode-Agent': 'Div_AI_Agent_Focus_4',
+            'Terminal-Agent': 'Div_AI_Agent_Focus_5'
         }
-        return agent_folder_map.get(agent, 'AI_Agent_1')
+        return agent_folder_map.get(agent, 'Div_AI_Agent_Focus_1')
         
     def _get_agent_mode(self, agent):
         """Get the mode for the agent"""

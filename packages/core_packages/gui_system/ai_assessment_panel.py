@@ -24,8 +24,8 @@ except ImportError:
                 "timestamp": datetime.now().isoformat(),
                 "session_id": "mock_session",
                 "recommendations": {
-                    "AI_Agent_1": {"use_interleaving": True, "reason": "Complex 3D modeling"},
-                    "AI_Agent_2": {"use_interleaving": False, "reason": "Simple simulation"}
+                    "Div_AI_Agent_Focus_1": {"use_interleaving": True, "reason": "Complex 3D modeling"},
+                    "Div_AI_Agent_Focus_2": {"use_interleaving": False, "reason": "Simple simulation"}
                 }
             }
         def get_assessment_summary(self):
@@ -292,15 +292,15 @@ class AIAssessmentPanel:
         session_params = {
             "session_id": f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             "planned_tasks": [
-                {"id": "model_robot_001", "agent": "AI_Agent_1", "priority": "high", 
+                {"id": "model_robot_001", "agent": "Div_AI_Agent_Focus_1", "priority": "high", 
                  "description": "Create complex 3D micro-robot model with retractable components"},
-                {"id": "physics_sim_002", "agent": "AI_Agent_2", "priority": "medium",
+                {"id": "physics_sim_002", "agent": "Div_AI_Agent_Focus_2", "priority": "medium",
                  "description": "Run physics simulation for joint movements"},
-                {"id": "optimize_mesh_003", "agent": "AI_Agent_1", "priority": "high",
+                {"id": "optimize_mesh_003", "agent": "Div_AI_Agent_Focus_1", "priority": "high",
                  "description": "Optimize mesh geometry for rendering performance"},
-                {"id": "generate_docs_004", "agent": "AI_Agent_5", "priority": "low",
+                {"id": "generate_docs_004", "agent": "Div_AI_Agent_Focus_5", "priority": "low",
                  "description": "Generate technical documentation"},
-                {"id": "test_animation_005", "agent": "AI_Agent_4", "priority": "medium",
+                {"id": "test_animation_005", "agent": "Div_AI_Agent_Focus_4", "priority": "medium",
                  "description": "Test and debug animation sequences"}
             ]
         }
@@ -366,10 +366,10 @@ class AIAssessmentPanel:
     def _add_sample_completions(self):
         """Add sample completion events"""
         sample_events = [
-            ("10:15:23", "AI_Agent_1", "model_robot_001", "Reassign", "High priority task waiting"),
-            ("10:22:45", "AI_Agent_3", "utility_task_002", "Redistribute", "Help overloaded AI_Agent_2"),
-            ("10:28:12", "AI_Agent_4", "test_task_003", "Optimize", "Increase parallel capacity"),
-            ("10:35:07", "AI_Agent_2", "physics_sim_004", "None", "No urgent tasks pending"),
+            ("10:15:23", "Div_AI_Agent_Focus_1", "model_robot_001", "Reassign", "High priority task waiting"),
+            ("10:22:45", "Div_AI_Agent_Focus_3", "utility_task_002", "Redistribute", "Help overloaded Div_AI_Agent_Focus_2"),
+            ("10:28:12", "Div_AI_Agent_Focus_4", "test_task_003", "Optimize", "Increase parallel capacity"),
+            ("10:35:07", "Div_AI_Agent_Focus_2", "physics_sim_004", "None", "No urgent tasks pending"),
         ]
         
         for event in sample_events:

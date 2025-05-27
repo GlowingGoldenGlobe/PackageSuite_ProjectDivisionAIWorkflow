@@ -44,11 +44,11 @@ class InterleavingTaskManager:
                 "batch_processing": {"prefer_interleaving": False, "reason": "PyAutoGen better for batches"}
             },
             "agent_preferences": {
-                "AI_Agent_1": {"complex_3d_modeling": True, "simple_generation": False},
-                "AI_Agent_2": {"assembly_optimization": True, "component_listing": False},
-                "AI_Agent_3": {"physics_simulation": True, "basic_calculations": False},
-                "AI_Agent_4": {"neural_design": True, "parameter_tuning": False},
-                "AI_Agent_5": {"system_integration": True, "status_reporting": False}
+                "Div_AI_Agent_Focus_1": {"complex_3d_modeling": True, "simple_generation": False},
+                "Div_AI_Agent_Focus_2": {"assembly_optimization": True, "component_listing": False},
+                "Div_AI_Agent_Focus_3": {"physics_simulation": True, "basic_calculations": False},
+                "Div_AI_Agent_Focus_4": {"neural_design": True, "parameter_tuning": False},
+                "Div_AI_Agent_Focus_5": {"system_integration": True, "status_reporting": False}
             }
         }
     

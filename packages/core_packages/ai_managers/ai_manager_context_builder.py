@@ -313,8 +313,8 @@ python start_agent_mode.py
             "model_manager": [
                 "ai_managers/refined_model_manager.py",
                 "MODEL_MANAGEMENT.md",
-                "AI_Agent_1/README.md",
-                "AI_Agent_1/ENHANCED_PHYSICS_README.md"
+                "Div_AI_Agent_Focus_1/README.md",
+                "Div_AI_Agent_Focus_1/ENHANCED_PHYSICS_README.md"
             ]
         }
         
@@ -398,7 +398,7 @@ def main():
     
     logger.info("Updating startup summary...")
     builder.update_startup_summary({
-        "Advanced Physics": "Enabled in AI_Agent_1",
+        "Advanced Physics": "Enabled in Div_AI_Agent_Focus_1",
         "Documentation": "Consolidated and indexed"
     })
     

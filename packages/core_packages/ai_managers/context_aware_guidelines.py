@@ -122,7 +122,7 @@ class ContextAwareGuidelines:
             "ai_managers/CLAUDE_PARALLEL_README.md",
             
             # Agent-specific
-            "AI_Agent_1/README_Agent_1.md",
+            "Div_AI_Agent_Focus_1/README_Agent_1.md",
             
             # GUI-related (moved to gui folder)
             "gui/GUI_README.md",

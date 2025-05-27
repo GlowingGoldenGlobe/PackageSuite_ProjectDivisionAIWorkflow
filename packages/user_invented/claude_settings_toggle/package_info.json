@@ -1,0 +1,19 @@
+{
+  "name": "claude_settings_toggle",
+  "description": "Toggle system for switching Claude Code between auto and manual permission modes",
+  "version": "1.0.0",
+  "author": "Richard Isaac Craddock",
+  "category": "user_invented",
+  "dependencies": [],
+  "files": [
+    "toggle_claude_settings.py",
+    "Toggle_Claude_Settings.bat",
+    "Toggle-ClaudeSettings.ps1",
+    ".claude/settings_auto.json",
+    ".claude/settings_manual.json",
+    ".claude/settings_state.json",
+    "docs/CLAUDE_SETTINGS_TOGGLE_SYSTEM.md"
+  ],
+  "installation_notes": "Creates .claude folder with auto/manual settings configurations",
+  "copied_date": "2025-05-27T17:00:00.000000"
+}

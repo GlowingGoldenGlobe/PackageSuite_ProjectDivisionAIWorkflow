@@ -27,11 +27,11 @@ class PackageOrganizer:
             "error_handler": {
                 "description": "Error handler package with simple_error_reporter",
                 "files": [
-                    "AI_Agent_1/simple_error_reporter.py",
-                    "AI_Agent_2/simple_error_reporter.py", 
-                    "AI_Agent_3/simple_error_reporter.py",
-                    "AI_Agent_4/simple_error_reporter.py",
-                    "AI_Agent_5/simple_error_reporter.py"
+                    "Div_AI_Agent_Focus_1/simple_error_reporter.py",
+                    "Div_AI_Agent_Focus_2/simple_error_reporter.py", 
+                    "Div_AI_Agent_Focus_3/simple_error_reporter.py",
+                    "Div_AI_Agent_Focus_4/simple_error_reporter.py",
+                    "Div_AI_Agent_Focus_5/simple_error_reporter.py"
                 ]
             },
             "ai_automated_workflow": {
@@ -269,7 +269,7 @@ def integrate_packages(division_path):
     
     # Create division structure if needed
     required_dirs = [
-        "AI_Agent_1", "AI_Agent_2", "AI_Agent_3", "AI_Agent_4", "AI_Agent_5",
+        "Div_AI_Agent_Focus_1", "Div_AI_Agent_Focus_2", "Div_AI_Agent_Focus_3", "Div_AI_Agent_Focus_4", "Div_AI_Agent_Focus_5",
         "ai_managers", "gui", "utils", "cloud_storage", "templates"
     ]
     

@@ -33,7 +33,7 @@ class InterleavingTaskControls:
         
         # Control variables
         self.control_scope = tk.StringVar(value="new_tasks")  # new_tasks, active_task, all_tasks
-        self.selected_folder = tk.StringVar(value="AI_Agent_1")
+        self.selected_folder = tk.StringVar(value="Div_AI_Agent_Focus_1")
         self.selected_mode = tk.StringVar(value="auto")  # auto, claude_code, api_key, vscode
         self.selected_task_id = tk.StringVar()
         
@@ -57,7 +57,7 @@ class InterleavingTaskControls:
         # For now, create some example tasks
         self.active_tasks = {
             "task_001": {
-                "folder": "AI_Agent_1",
+                "folder": "Div_AI_Agent_Focus_1",
                 "mode": "claude_code",
                 "description": "Build micro-robot arm component",
                 "status": "running",
@@ -65,7 +65,7 @@ class InterleavingTaskControls:
                 "interleaving": True
             },
             "task_002": {
-                "folder": "AI_Agent_1", 
+                "folder": "Div_AI_Agent_Focus_1", 
                 "mode": "api_key",
                 "description": "Optimize joint mechanisms",
                 "status": "running",
@@ -344,11 +344,11 @@ class InterleavingTaskControls:
         folder = self.selected_folder.get()
         
         roles = {
-            "AI_Agent_1": "3D modeling of micro-robot parts",
-            "AI_Agent_2": "Assembly and integration",
-            "AI_Agent_3": "Physics simulation and testing",
-            "AI_Agent_4": "Neural control systems",
-            "AI_Agent_5": "System optimization"
+            "Div_AI_Agent_Focus_1": "3D modeling of micro-robot parts",
+            "Div_AI_Agent_Focus_2": "Assembly and integration",
+            "Div_AI_Agent_Focus_3": "Physics simulation and testing",
+            "Div_AI_Agent_Focus_4": "Neural control systems",
+            "Div_AI_Agent_Focus_5": "System optimization"
         }
         
         desc = roles.get(folder, "Unknown role")

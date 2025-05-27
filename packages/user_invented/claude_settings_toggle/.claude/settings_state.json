@@ -1,0 +1,33 @@
+{
+  "current_mode": "auto",
+  "last_toggle": "2025-05-27T16:30:00",
+  "modes": {
+    "auto": {
+      "description": "Autonomous operation with 5 parallel terminals",
+      "file": "settings_auto.json",
+      "features": [
+        "No permission prompts for authorized commands",
+        "Up to 5 parallel terminal instances",
+        "Automatic script execution",
+        "Process management capabilities"
+      ]
+    },
+    "manual": {
+      "description": "Manual permission mode - original settings",
+      "file": "settings_manual.json",
+      "features": [
+        "Permission required for most operations",
+        "Limited automation capabilities",
+        "Basic file and git operations only"
+      ]
+    }
+  },
+  "toggle_history": [
+    {
+      "from": "manual",
+      "to": "auto",
+      "timestamp": "2025-05-27T16:30:00",
+      "reason": "Enable parallel terminal automation"
+    }
+  ]
+}

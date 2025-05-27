@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Fixed version of simplified interleaving controls with correct terminology
-IMPORTANT: AI_Agent_1 through AI_Agent_5 are FOLDERS (project divisions), not AI agents!
+IMPORTANT: Div_AI_Agent_Focus_1 through Div_AI_Agent_Focus_5 are FOLDERS (project divisions), not AI agents!
 """
 
 import tkinter as tk
@@ -119,7 +119,7 @@ class SimpleInterleavingControls:
         
         ttk.Label(
             clarification_frame,
-            text="⚠️ IMPORTANT: AI_Agent_1 through AI_Agent_5 are PROJECT FOLDERS (divisions/roles), NOT AI agents!",
+            text="⚠️ IMPORTANT: Div_AI_Agent_Focus_1 through Div_AI_Agent_Focus_5 are PROJECT FOLDERS (divisions/roles), NOT AI agents!",
             font=("Arial", 10, "bold"),
             foreground="red"
         ).pack(anchor="w")
@@ -184,7 +184,7 @@ class SimpleInterleavingControls:
         modes = [
             ("global", "Global - Apply to all AI agents and tasks"),
             ("per_agent", "Per AI Agent Type - Different settings for API Key, Claude Code, VSCode"),
-            ("per_folder", "Per Project Folder - Different settings for AI_Agent_1, AI_Agent_2, etc."),
+            ("per_folder", "Per Project Folder - Different settings for Div_AI_Agent_Focus_1, Div_AI_Agent_Focus_2, etc."),
             ("per_task", "Per Task - Override for specific folder:task combinations")
         ]
         

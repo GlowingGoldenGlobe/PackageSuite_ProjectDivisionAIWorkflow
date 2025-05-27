@@ -1,0 +1,15 @@
+{
+  "name": "git_setup",
+  "description": "Git configuration and nested git cleanup system",
+  "version": "1.0.0",
+  "category": "setup_packages",
+  "files": [
+    ".gitignore",
+    "scheduled_git_cleanup_task.py",
+    "NESTED_GIT_CLEANUP_SYSTEM.md",
+    "nested_git_handler.py",
+    "FOLDER_PLACEMENT_GUIDE.md"
+  ],
+  "installation_notes": "Copy .gitignore to project root; place Python files in their respective folders as specified in guide",
+  "created_date": "2025-05-27"
+}

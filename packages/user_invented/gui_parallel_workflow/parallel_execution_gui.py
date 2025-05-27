@@ -726,7 +726,7 @@ class ParallelExecutionGUI:
             # Add role-specific fields
             if role == self.manager.ROLE_AGENT_SIMULATIONS:
                 # For agent simulations, we need agent_id and script
-                task["agent_id"] = "AI_Agent_1"  # Default
+                task["agent_id"] = "Div_AI_Agent_Focus_1"  # Default
                 task["script"] = "simulation.py"  # Default
             elif role == self.manager.ROLE_SCRIPT_ASSESSMENT:
                 # For script assessment, we need script_path

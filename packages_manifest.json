@@ -50,7 +50,8 @@
           "gui_parallel_workflow",
           "config_ai_agent_memory",
           "parallel_agents_conflict_prevention",
-          "llm_memory_cpuo_system"
+          "llm_memory_cpuo_system",
+          "claude_settings_toggle"
         ],
         "files": [
           "enhanced_project_ai_manager_v2.py",
@@ -132,6 +133,28 @@
           "cross_reference_manager.py",
           "PROJECT_IMPROVEMENT_PROCEDURE_GUIDE.md"
         ]
+      },
+      "claude_settings_toggle": {
+        "name": "Claude Settings Toggle System",
+        "version": "1.0",
+        "description": "Toggle Claude Code between auto and manual permission modes",
+        "created_date": "2025-05-27",
+        "features": [
+          "Easy switching between auto/manual modes",
+          "5 parallel terminals in auto mode",
+          "Automatic backup before toggle",
+          "State tracking and history",
+          "Multiple interfaces (CLI, batch, PowerShell)"
+        ],
+        "files": [
+          "toggle_claude_settings.py",
+          "Toggle_Claude_Settings.bat",
+          "Toggle-ClaudeSettings.ps1",
+          ".claude/settings_auto.json",
+          ".claude/settings_manual.json",
+          ".claude/settings_state.json",
+          "docs/CLAUDE_SETTINGS_TOGGLE_SYSTEM.md"
+        ]
       }
     },
     "project_developed": {
@@ -204,7 +227,50 @@
         "assessment_based_cleanup.py",
         "package_update_checker.py"
       ]
+    },
+    "setup_packages": {
+      "venv_setup": {
+        "name": "Virtual Environment Setup",
+        "version": "1.0",
+        "description": "Virtual environment setup utilities and package upgrade system",
+        "created_date": "2025-05-27",
+        "files": [
+          "upkgs.py",
+          "OPEN3D_SETUP_GUIDE.md",
+          "O3DE_WSL2_SETUP_GUIDE.md"
+        ],
+        "notes": "Use python310/python.exe for Open3D installation"
+      },
+      "git_setup": {
+        "name": "Git Configuration Setup",
+        "version": "1.0",
+        "description": "Git configuration and nested git cleanup system",
+        "created_date": "2025-05-27",
+        "files": [
+          ".gitignore",
+          "scheduled_git_cleanup_task.py",
+          "NESTED_GIT_CLEANUP_SYSTEM.md",
+          "nested_git_handler.py",
+          "FOLDER_PLACEMENT_GUIDE.md"
+        ],
+        "folder_placement": {
+          ".gitignore": "project_root",
+          "scheduled_git_cleanup_task.py": "ai_managers/",
+          "nested_git_handler.py": "utils/",
+          "NESTED_GIT_CLEANUP_SYSTEM.md": "docs/"
+        }
+      }
     }
+  },
+  "optional_software": {
+    "note": "See SOFTWARE_SUGGESTIONS.md in setup_packages for recommended software",
+    "recommendations": [
+      "O3DE (Open 3D Engine) - Install on WSL2 Ubuntu",
+      "Blender - 3D modeling and animation",
+      "Open3D - 3D data processing (use python310)",
+      "Visual Studio Code - Development environment",
+      "WSL2 - Windows Subsystem for Linux"
+    ]
   },
   "dependencies": {
     "python": ">=3.8",

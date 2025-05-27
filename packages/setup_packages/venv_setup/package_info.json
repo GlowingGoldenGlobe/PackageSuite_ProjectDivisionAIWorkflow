@@ -1,0 +1,12 @@
+{
+  "name": "venv_setup",
+  "description": "Virtual environment setup and package upgrade utilities",
+  "version": "1.0.0",
+  "category": "setup_packages",
+  "files": [
+    "upkgs.py",
+    "OPEN3D_SETUP_GUIDE.md"
+  ],
+  "installation_notes": "Use upkgs.py to upgrade all packages in virtual environment",
+  "created_date": "2025-05-27"
+}

@@ -65,17 +65,17 @@ class TaskIDDisplayManager:
         # Add some example planned tasks
         task_data["planned_tasks"] = {
             "enhance_3d_model": {
-                "agent": "AI_Agent_1",
+                "agent": "Div_AI_Agent_Focus_1",
                 "description": "Enhance 3D model with retractable components",
                 "priority": "high"
             },
             "optimize_physics": {
-                "agent": "AI_Agent_2", 
+                "agent": "Div_AI_Agent_Focus_2", 
                 "description": "Optimize physics simulation parameters",
                 "priority": "medium"
             },
             "generate_docs": {
-                "agent": "AI_Agent_3",
+                "agent": "Div_AI_Agent_Focus_3",
                 "description": "Generate technical documentation",
                 "priority": "low"
             }

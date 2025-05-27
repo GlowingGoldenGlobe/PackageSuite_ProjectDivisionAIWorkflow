@@ -783,7 +783,7 @@ class GlowingGoldenGlobeGUI:
             patterns = [
                 "micro_robot_composite_part_v*.json",
                 "model_versions/v*/micro_robot_composite_part_v*.json",
-                "AI_Agent_1/micro_robot_composite_part_v*.json"
+                "Div_AI_Agent_Focus_1/micro_robot_composite_part_v*.json"
             ]
             
             for pattern in patterns:
@@ -849,20 +849,20 @@ class GlowingGoldenGlobeGUI:
         try:
             # Check for AI Agent folders - Use shorter names for dropdown display
             agent_roles = {
-                "AI_Agent_1": "Micro-Robot",
-                "AI_Agent_2": "Torso",
-                "AI_Agent_3": "Head",
-                "AI_Agent_4": "Arms",
-                "AI_Agent_5": "Hands"
+                "Div_AI_Agent_Focus_1": "Micro-Robot",
+                "Div_AI_Agent_Focus_2": "Torso",
+                "Div_AI_Agent_Focus_3": "Head",
+                "Div_AI_Agent_Focus_4": "Arms",
+                "Div_AI_Agent_Focus_5": "Hands"
             }
             
             # Make shorter entries and store the component mapping for later use
             self.agent_components = {
-                "AI_Agent_1": ["Core", "Actuators", "Sensors", "Power"],
-                "AI_Agent_2": ["Chest", "Back", "Abdomen", "Waist"],
-                "AI_Agent_3": ["Neck", "Skull", "Face", "Jaw"],
-                "AI_Agent_4": ["Shoulders", "Upper Arms", "Elbows", "Forearms"],
-                "AI_Agent_5": ["Wrists", "Palms", "Fingers", "Thumbs"]
+                "Div_AI_Agent_Focus_1": ["Core", "Actuators", "Sensors", "Power"],
+                "Div_AI_Agent_Focus_2": ["Chest", "Back", "Abdomen", "Waist"],
+                "Div_AI_Agent_Focus_3": ["Neck", "Skull", "Face", "Jaw"],
+                "Div_AI_Agent_Focus_4": ["Shoulders", "Upper Arms", "Elbows", "Forearms"],
+                "Div_AI_Agent_Focus_5": ["Wrists", "Palms", "Fingers", "Thumbs"]
             }
             
             # Store the full component details for display
@@ -940,7 +940,7 @@ class GlowingGoldenGlobeGUI:
             status_files = [
                 f"requirements_met_v{version}.flag",
                 f"simulation_complete_v{version}.flag",
-                f"AI_Agent_1/version_v{version}_*.flag",
+                f"Div_AI_Agent_Focus_1/version_v{version}_*.flag",
             ]
             
             for status_file in status_files:
@@ -951,7 +951,7 @@ class GlowingGoldenGlobeGUI:
             # Check if work in progress
             progress_files = [
                 f"micro_robot_composite_part_v{version}.blend",
-                f"AI_Agent_1/task_{version}_*.blend"
+                f"Div_AI_Agent_Focus_1/task_{version}_*.blend"
             ]
             
             for progress_file in progress_files:
@@ -1101,7 +1101,7 @@ class GlowingGoldenGlobeGUI:
             # Directories to search
             dirs = [
                 parent_dir,
-                os.path.join(parent_dir, "AI_Agent_1"),
+                os.path.join(parent_dir, "Div_AI_Agent_Focus_1"),
                 os.path.join(parent_dir, "model_versions"),
                 os.path.join(parent_dir, "agent_outputs")
             ]
@@ -1136,7 +1136,7 @@ class GlowingGoldenGlobeGUI:
             # Directories to search
             dirs = [
                 parent_dir,
-                os.path.join(parent_dir, "AI_Agent_1"),
+                os.path.join(parent_dir, "Div_AI_Agent_Focus_1"),
                 os.path.join(parent_dir, "model_versions"),
                 os.path.join(parent_dir, "agent_outputs")
             ]
@@ -1945,7 +1945,7 @@ A: Close other applications, reduce simulation detail, or upgrade hardware compo
         # Directories to search
         dirs = [
             parent_dir,
-            os.path.join(parent_dir, "AI_Agent_1"),
+            os.path.join(parent_dir, "Div_AI_Agent_Focus_1"),
             os.path.join(parent_dir, "model_versions"),
             os.path.join(parent_dir, "agent_outputs")
         ]
@@ -2019,7 +2019,7 @@ A: Close other applications, reduce simulation detail, or upgrade hardware compo
         # Check for log files
         log_files = [
             os.path.join(parent_dir, "model_development_log.md"),
-            os.path.join(parent_dir, "AI_Agent_1", "model_development_log.md"),
+            os.path.join(parent_dir, "Div_AI_Agent_Focus_1", "model_development_log.md"),
             os.path.join(parent_dir, f"simulation_log_v{version}.txt")
         ]
         

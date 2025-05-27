@@ -266,7 +266,7 @@ class DivisionInstaller:
         """Create division directory structure"""
         # Main directories
         directories = [
-            'AI_Agent_1', 'AI_Agent_2', 'AI_Agent_3', 'AI_Agent_4', 'AI_Agent_5',
+            'Div_AI_Agent_Focus_1', 'Div_AI_Agent_Focus_2', 'Div_AI_Agent_Focus_3', 'Div_AI_Agent_Focus_4', 'Div_AI_Agent_Focus_5',
             'ai_managers', 'gui', 'utils', 'docs', 'cloud_storage',
             'logs', 'agent_outputs', 'templates', 'Scripts'
         ]

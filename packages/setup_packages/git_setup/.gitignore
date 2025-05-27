@@ -1,0 +1,95 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+#*
+venv/
+glowinggoldenglobe_venv/
+env/
+ENV/
+
+# Virtual environment folders (NEVER commit these!)
+/Lib/
+/Scripts/
+/Include/
+/share/
+/bin/
+/pyvenv.cfg
+/pip-selfcheck.json
+
+# Ensure all paths are absolute from repo root
+/glowinggoldenglobe_venv/Lib/
+/glowinggoldenglobe_venv/Scripts/
+/glowinggoldenglobe_venv/Include/
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.installed.cfg
+*.egg
+
+# Local development settings
+.env
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+*.sql
+*.json.log
+
+# Project specific files
+package_updates.log
+parallel_execution.log
+parallel_integration.log
+*.temp
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# AWS deployment specific
+*.aws-sam/
+samconfig.toml
+packaged.yaml
+
+# Open3D Physics Simulation Software
+open3d_direct/
+open3d_build/
+
+# Package suite (has its own git repo)
+pkg-suite/
+
+# Package manager files
+pip-*.dist-info/
+*.dist-info/
+*.egg-info/
+
+# Temporary and backup files
+*.bak
+*.bak.*
+*.backup
+*~
+.*.swp
+.*.swo

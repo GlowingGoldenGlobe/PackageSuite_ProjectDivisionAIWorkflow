@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-Parallel Task Example for AI_Agent_1 - Micro-Robot-Composite Part Development
+Parallel Task Example for Div_AI_Agent_Focus_1 - Micro-Robot-Composite Part Development
 
 This script demonstrates a task that can be run in parallel by the Claude Parallel
-execution system. It performs basic operations related to AI_Agent_1's responsibility
+execution system. It performs basic operations related to Div_AI_Agent_Focus_1's responsibility
 of micro-robot-composite part development.
 
 When run as part of a parallel execution:
@@ -29,7 +29,7 @@ logger = logging.getLogger("ParallelAgent1Task")
 
 # Base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-AGENT_DIR = os.path.join(BASE_DIR, "AI_Agent_1")
+AGENT_DIR = os.path.join(BASE_DIR, "Div_AI_Agent_Focus_1")
 OUTPUT_DIR = os.path.join(AGENT_DIR, "agent_outputs")
 
 # Ensure output directory exists
@@ -127,7 +127,7 @@ def main():
     part_id = f"micro_part_{int(time.time())}"
     
     # Run the simulation
-    logger.info(f"Starting parallel task for AI_Agent_1 with part_id: {part_id}")
+    logger.info(f"Starting parallel task for Div_AI_Agent_Focus_1 with part_id: {part_id}")
     
     try:
         # Perform the part refinement

@@ -34,7 +34,7 @@ if current_dir not in sys.path:
 # Try to import the required modules
 try:
     # Import our custom Open3D utilities
-    from AI_Agent_1.open3d_utils import (
+    from Div_AI_Agent_Focus_1.open3d_utils import (
         MeshQualityMetrics,
         MeshProcessing,
         MeshVisualization,
@@ -43,14 +43,14 @@ try:
     )
     
     # Import refinement modules
-    from AI_Agent_1.refinement_3d_sequence import Model3DRefinementSequence
+    from Div_AI_Agent_Focus_1.refinement_3d_sequence import Model3DRefinementSequence
     
     # Import other utilities as needed
     from model_notification_system import get_notification_system, ModelNotification
     
     # Import physics-related modules if available
     try:
-        from AI_Agent_1.advanced_physics_simulation import (
+        from Div_AI_Agent_Focus_1.advanced_physics_simulation import (
             MaterialType,
             MaterialProperties,
             MATERIAL_LIBRARY
@@ -330,17 +330,17 @@ class Open3DGUIIntegration:
         # Search for models in agent_outputs and related directories
         search_paths = [
             "./agent_outputs/**/*.blend",
-            "./AI_Agent_1/**/*.blend",
+            "./Div_AI_Agent_Focus_1/**/*.blend",
             "./agent_outputs/**/*.obj",
             "./agent_outputs/**/*.ply",
             "./agent_outputs/**/*.stl",
-            "./AI_Agent_1/**/*.obj",
-            "./AI_Agent_1/**/*.ply",
-            "./AI_Agent_1/**/*.stl",
-            "./AI_Agent_1/agent_outputs/**/*.blend",
-            "./AI_Agent_1/agent_outputs/**/*.obj",
-            "./AI_Agent_1/agent_outputs/**/*.ply",
-            "./AI_Agent_1/agent_outputs/**/*.stl"
+            "./Div_AI_Agent_Focus_1/**/*.obj",
+            "./Div_AI_Agent_Focus_1/**/*.ply",
+            "./Div_AI_Agent_Focus_1/**/*.stl",
+            "./Div_AI_Agent_Focus_1/agent_outputs/**/*.blend",
+            "./Div_AI_Agent_Focus_1/agent_outputs/**/*.obj",
+            "./Div_AI_Agent_Focus_1/agent_outputs/**/*.ply",
+            "./Div_AI_Agent_Focus_1/agent_outputs/**/*.stl"
         ]
         
         for path in search_paths:
@@ -462,7 +462,7 @@ class Open3DGUIIntegration:
             import open3d as o3d
             
             # Import our analysis tools
-            from AI_Agent_1.open3d_utils import MeshQualityMetrics, MeshVisualization
+            from Div_AI_Agent_Focus_1.open3d_utils import MeshQualityMetrics, MeshVisualization
             
             # Load the mesh
             mesh = o3d.io.read_triangle_mesh(model_path)
@@ -702,7 +702,7 @@ class Open3DGUIIntegration:
         try:
             # Import Open3D and utilities
             import open3d as o3d
-            from AI_Agent_1.open3d_utils import MeshProcessing, MeshQualityMetrics
+            from Div_AI_Agent_Focus_1.open3d_utils import MeshProcessing, MeshQualityMetrics
             
             # Load the mesh
             mesh = o3d.io.read_triangle_mesh(model_path)
@@ -992,7 +992,7 @@ class Open3DGUIIntegration:
         """Run full refinement sequence in background thread"""
         try:
             # Import the refinement sequence module
-            from AI_Agent_1.refinement_3d_sequence import Model3DRefinementSequence
+            from Div_AI_Agent_Focus_1.refinement_3d_sequence import Model3DRefinementSequence
             
             # Initialize refiner
             refiner = Model3DRefinementSequence()
@@ -1239,7 +1239,7 @@ class Open3DGUIIntegration:
         try:
             # Import Open3D and export utility
             import open3d as o3d
-            from AI_Agent_1.open3d_utils import MeshExportImport
+            from Div_AI_Agent_Focus_1.open3d_utils import MeshExportImport
             
             # Load mesh
             mesh = o3d.io.read_triangle_mesh(model_path)

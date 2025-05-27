@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(ls:*)",
+      "Bash(pip install:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(pip show:*)",
+      "Bash(powershell:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(diff:*)",
+      "Bash(touch:*)",
+      "Bash(rg:*)",
+      "Bash(./Run_Fixed_Layout.bat)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(ping:*)",
+      "Bash(ipconfig:*)",
+      "Bash(wsl:*)",
+      "Bash(winget install:*)",
+      "Bash(./python310/python.exe -m pip install --default-timeout=1200 --upgrade pip)",
+      "Bash(./python310/python.exe -m pip install:*)",
+      "Bash(sudo apt:*)",
+      "Bash(expect -d:*)",
+      "Bash(sed:*)",
+      "Bash(timeout:*)",
+      "Bash(rm:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git rm:*)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": []
+  },
+  "memory": {
+    "referenceFiles": [
+      "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/CLAUDE.md",
+      "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/docs/TOKEN_EFFICIENCY_RULES.md",
+      "/mnt/c/Users/yerbr/glowinggoldenglobe_venv/MEMORY_GUIDELINES.md"
+    ]
+  }
+}

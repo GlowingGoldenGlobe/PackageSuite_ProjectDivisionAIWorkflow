@@ -124,11 +124,11 @@ class ClaudeParallelManager:
                 }
             },
             "agent_folders": [
-                "AI_Agent_1",
-                "AI_Agent_2",
-                "AI_Agent_3",
-                "AI_Agent_4",
-                "AI_Agent_5"
+                "Div_AI_Agent_Focus_1",
+                "Div_AI_Agent_Focus_2",
+                "Div_AI_Agent_Focus_3",
+                "Div_AI_Agent_Focus_4",
+                "Div_AI_Agent_Focus_5"
             ],
             "default_task_type": "utility",
             "fallback_mode": "sequential",
