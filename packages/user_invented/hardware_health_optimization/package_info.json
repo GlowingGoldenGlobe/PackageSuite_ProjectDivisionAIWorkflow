@@ -1,0 +1,58 @@
+{
+    "name": "hardware_health_optimization",
+    "version": "1.0.0",
+    "description": "Advanced thermal and duty cycle management for local GPU/CPU hardware",
+    "author": "GGG Project",
+    "category": "performance_optimization",
+    "dependencies": [
+        "psutil>=5.8.0",
+        "pynvml>=11.0.0"
+    ],
+    "local_only": true,
+    "excluded_targets": [
+        "aws",
+        "azure",
+        "gcp",
+        "cloud",
+        "remote",
+        "docker",
+        "kubernetes"
+    ],
+    "deployment_conditions": {
+        "requires_local_hardware": true,
+        "skip_if_cloud": true,
+        "check_function": "is_local_deployment",
+        "min_gpu_memory": "4GB"
+    },
+    "files": [
+        "thermal_optimizer.py",
+        "duty_cycle_manager.py",
+        "health_config.json",
+        "__init__.py"
+    ],
+    "integration_hooks": {
+        "resource_manager": {
+            "file": "thermal_optimizer.py",
+            "class": "ThermalOptimizer",
+            "method": "integrate_with_resource_manager"
+        },
+        "hardware_monitor": {
+            "file": "duty_cycle_manager.py",
+            "class": "DutyCycleManager",
+            "method": "register_monitor_callbacks"
+        }
+    },
+    "features": [
+        "GPU temperature targeting (70°C optimal)",
+        "Power limit management (85% for longevity)",
+        "Duty cycle scheduling (work/rest periods)",
+        "Night mode power reduction",
+        "Maintenance window scheduling"
+    ],
+    "non_redundant": true,
+    "complements": [
+        "resource_manager",
+        "hardware_monitor",
+        "claude_resource_monitor"
+    ]
+}

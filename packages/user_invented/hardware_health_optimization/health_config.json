@@ -1,0 +1,58 @@
+{
+    "thermal": {
+        "gpu": {
+            "temp_target_c": 70,
+            "temp_max_c": 80,
+            "power_limit_percent": 85,
+            "fan_curve": "balanced"
+        },
+        "cpu": {
+            "temp_target_c": 65,
+            "temp_max_c": 75,
+            "turbo_disable_temp_c": 70,
+            "thermal_throttle_offset": 5
+        }
+    },
+    "duty_cycles": {
+        "heavy_compute": {
+            "work_minutes": 45,
+            "rest_minutes": 15,
+            "max_continuous_hours": 3,
+            "applicable_tasks": ["blender_rendering", "physics_simulation", "model_training"]
+        },
+        "normal": {
+            "work_minutes": 55,
+            "rest_minutes": 5,
+            "max_continuous_hours": 6,
+            "applicable_tasks": ["code_generation", "file_processing", "general_compute"]
+        },
+        "light": {
+            "work_minutes": 115,
+            "rest_minutes": 5,
+            "max_continuous_hours": 12,
+            "applicable_tasks": ["monitoring", "idle", "background_tasks"]
+        }
+    },
+    "night_mode": {
+        "enabled": true,
+        "start_hour": 22,
+        "end_hour": 6,
+        "resource_reduction": 0.5,
+        "disable_turbo": true,
+        "reduce_gpu_clock": true
+    },
+    "maintenance_windows": [
+        {
+            "day": "sunday",
+            "hour": 3,
+            "duration_minutes": 30,
+            "actions": ["clear_temp_files", "defragment_cache", "reset_thermal_baseline"]
+        }
+    ],
+    "integration": {
+        "resource_manager_hooks": true,
+        "hardware_monitor_hooks": true,
+        "gui_notifications": true,
+        "log_health_metrics": true
+    }
+}
