@@ -16,6 +16,44 @@ This package complements existing modules without duplication:
 - Hooks into `hardware_monitor.py` for duty cycle reporting
 - Works alongside `claude_resource_monitor.py` for parallel execution
 
+### Files NOT Included (Already Exist in Project)
+From the original 20+ file concept, these were excluded as redundant:
+
+**Already in `hardware_monitor.py`:**
+- CPU/memory/disk monitoring
+- Threshold alerts
+- Resource history tracking
+- System summaries
+
+**Already in `resource_manager.py`:**
+- Process throttling
+- Memory optimization
+- Disk cleanup
+- Critical resource handling
+
+**Already in `windows_resource_monitor.py`:**
+- WMI monitoring
+- Task Manager metrics
+- Performance alerts
+
+**Already in `claude_resource_monitor.py`:**
+- Claude-specific monitoring
+- Adaptive allocation
+- Task-based limits
+
+**Already in GUI system:**
+- `gui/system_monitor_integration.py` - GUI displays
+- Alert handling
+- Threshold management
+
+### Unique Features in This Package
+Only features NOT available elsewhere:
+- GPU temperature targeting (70°C optimal)
+- Power limit management (85% for longevity)
+- Duty cycle scheduling (45/15 min work/rest)
+- Night mode scheduling (10 PM - 6 AM)
+- Maintenance window automation
+
 ## Deployment
 **Local Only** - This package is excluded from cloud deployments (AWS, Azure, GCP) as cloud providers manage their own hardware optimization.
 
