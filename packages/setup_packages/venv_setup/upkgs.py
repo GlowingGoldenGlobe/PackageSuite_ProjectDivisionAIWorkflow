@@ -85,18 +85,18 @@ import subprocess
 import sys
 import re
 
-# Function to get dependencies installed alongside pyautogen
-def get_pyautogen_dependencies():
+# Function to get dependencies installed alongside ag2
+def get_ag2_dependencies():
     installed_packages = []
     try:
         # Use sys.executable to ensure we're using the correct Python interpreter
-        result = subprocess.run([sys.executable, "-m", "pip", 'install', 'pyautogen', '--dry-run'], 
+        result = subprocess.run([sys.executable, "-m", "pip", 'install', 'ag2', '--dry-run'], 
                                capture_output=True, text=True)
         package_regex = re.compile(r'^\s*([a-zA-Z0-9_-]+)', re.MULTILINE)
         matches = package_regex.findall(result.stdout)
-        installed_packages.extend(set([match for match in matches if match.lower() != 'pyautogen']))
+        installed_packages.extend(set([match for match in matches if match.lower() != 'ag2']))
     except Exception as e:
-        print(f"Error getting pyautogen dependencies: {str(e)}")
+        print(f"Error getting ag2 dependencies: {str(e)}")
     return installed_packages
 
 some_selected_packages = """
@@ -112,7 +112,7 @@ some_selected_packages = """
   chardet
   regex
   tiktoken
-  pyautogen
+  ag2
   dash==3.0.4
   flask==3.0.3
   werkzeug==3.0.6
@@ -143,7 +143,7 @@ all_of_the_packages = """
   pip
   pip-tools
   psutil
-  pyautogen
+  ag2
   pycodestyle
   pydantic
   pydantic_core
@@ -438,15 +438,15 @@ def main(p=1):
     print("Updating pip...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--default-timeout=1000", "--upgrade", "pip"])
 
-    # Get pyautogen dependencies
-    print("Getting pyautogen dependencies...")
-    pyautogen_related_packages = get_pyautogen_dependencies()
+    # Get ag2 dependencies
+    print("Getting ag2 dependencies...")
+    ag2_related_packages = get_ag2_dependencies()
 
     some_packages = []
     developer_selection_packages = some_selected_packages if p == 1 else all_of_the_packages
 
-    # Filter out pyautogen_related_packages
-    filtered_packages = [pkg for pkg in developer_selection_packages.split('\n') if pkg.strip() not in pyautogen_related_packages]
+    # Filter out ag2_related_packages
+    filtered_packages = [pkg for pkg in developer_selection_packages.split('\n') if pkg.strip() not in ag2_related_packages]
 
     for item in filtered_packages:
         item_stripped = item.strip()

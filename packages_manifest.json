@@ -291,7 +291,7 @@
       "blender>=3.0"
     ],
     "development": [
-      "pyautogen>=0.2.26",
+      "ag2>=0.2.26",
       "flask>=2.0.0",
       "pytest>=7.0.0"
     ]

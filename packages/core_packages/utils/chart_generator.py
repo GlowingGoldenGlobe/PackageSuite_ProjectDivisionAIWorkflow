@@ -16,7 +16,7 @@ class ComponentType:
     """Define component types for the system architecture"""
     AI_MANAGER = "ai_manager"
     IMPLEMENTATION = "implementation"
-    PYAUTOGEN = "pyautogen"
+    PYAUTOGEN = "ag2"
     EXTERNAL = "external"
 
 class ChartGenerator:
@@ -103,7 +103,7 @@ class ChartGenerator:
             return ComponentType.AI_MANAGER
         
         # PyAutoGen components
-        if "pyautogen" in content or "autogen" in content:
+        if "ag2" in content or "autogen" in content:
             return ComponentType.PYAUTOGEN
             
         # Default to implementation
@@ -221,7 +221,7 @@ class ChartGenerator:
         mermaid_code = "flowchart TD\n"
         mermaid_code += "    classDef aiManager fill:#f96,stroke:#333,stroke-width:2px\n"
         mermaid_code += "    classDef implementation fill:#9cf,stroke:#333,stroke-width:1px\n"
-        mermaid_code += "    classDef pyautogen fill:#c9f,stroke:#333,stroke-width:2px\n"
+        mermaid_code += "    classDef ag2 fill:#c9f,stroke:#333,stroke-width:2px\n"
         mermaid_code += "    classDef external fill:#cfc,stroke:#333,stroke-width:1px\n\n"
         
         # External systems (hardcoded for now)
@@ -233,7 +233,7 @@ class ChartGenerator:
         # Add components by type
         ai_managers = []
         implementations = {}  # Group implementations by category
-        pyautogen_comps = []
+        ag2_comps = []
         
         for component in self.components:
             name = os.path.splitext(component["name"])[0]
@@ -243,8 +243,8 @@ class ChartGenerator:
                 ai_managers.append(component['id'])
             
             elif component["type"] == ComponentType.PYAUTOGEN:
-                mermaid_code += f"    {component['id']}[{name}] :::pyautogen\n"
-                pyautogen_comps.append(component['id'])
+                mermaid_code += f"    {component['id']}[{name}] :::ag2\n"
+                ag2_comps.append(component['id'])
             
             elif component["type"] == ComponentType.IMPLEMENTATION:
                 # Categorize implementation component
@@ -271,9 +271,9 @@ class ChartGenerator:
             mermaid_code += "    end\n\n"
         
         # PyAutoGen group
-        if pyautogen_comps:
+        if ag2_comps:
             mermaid_code += "    subgraph PyAutoGen_System [PyAutoGen Integration]\n"
-            for comp_id in pyautogen_comps:
+            for comp_id in ag2_comps:
                 mermaid_code += f"        {comp_id}\n"
             mermaid_code += "    end\n\n"
         
