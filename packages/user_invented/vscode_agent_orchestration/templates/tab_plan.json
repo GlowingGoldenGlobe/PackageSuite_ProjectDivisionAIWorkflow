@@ -1,0 +1,23 @@
+{
+  "orchestrator": {
+    "tab_id": "orchestrator",
+    "description": "Primary coordinator responsible for shared logs and task assignments"
+  },
+  "defaults": {
+    "child_count": 4,
+    "tab_ids": ["1", "2", "3", "4"],
+    "notes": "Default deployment uses four child tabs alongside one orchestrator tab"
+  },
+  "limits": {
+    "max_child_tabs": 9,
+    "optional": true,
+    "extra_tab_ids": ["5", "6", "7", "8", "9"],
+    "notes": "Child tabs above the default four should be provisioned as needed up to nine"
+  },
+  "file_templates": {
+    "task": "task_tab_{id}.json",
+    "completed": "completed_tab_{id}.json",
+    "proposal": "task_proposal_tab_{id}.json",
+    "busy": "busy_files_tab_{id}.json"
+  }
+}

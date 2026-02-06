@@ -1,0 +1,12 @@
+{
+  "tab_id": "{id}",
+  "role": "child_agent_optional",
+  "assignments": [],
+  "last_sync": null,
+  "prompt_instructions": [
+    "Consult orchestration/vscode_orchestration_gpt5/restricted_files_orchestrator.json before editing any shared file.",
+    "Do not modify files listed in the restricted registry unless the orchestrator explicitly delegates the edit.",
+    "Reserve files by running python -m orchestration.vscode_orchestration_gpt5.busy_ledgers mark-busy <tab_id> <path> before edits and mark-free afterward.",
+    "Log outcomes in completed_tab_<tab_id>.json and capture follow-up proposals in task_proposal_tab_<tab_id>.json before handing work back to the orchestrator."
+  ]
+}

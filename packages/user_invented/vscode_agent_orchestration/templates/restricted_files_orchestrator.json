@@ -1,0 +1,9 @@
+{
+  "description": "Registry of files restricted to orchestrator writes unless explicitly delegated.",
+  "files": [
+    {
+      "path": "project_modifications_tasks/tasks_022026_1.md",
+      "reason": "Canonical task log must remain single-writer"
+    }
+  ]
+}
