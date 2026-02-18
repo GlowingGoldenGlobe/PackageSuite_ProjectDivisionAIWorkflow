@@ -223,7 +223,7 @@ class SimpleInterleavingControls:
             ("api_key", "API Key AI Agent (Claude, GPT-4, etc.)"),
             ("claude_code", "Claude Code (Standalone subscription)"),
             ("vscode", "VSCode Agent Mode"),
-            ("pyautogen", "PyAutoGen/AutoGen Agents")
+            ("ag2", "PyAutoGen/AutoGen Agents")
         ]
         
         for agent_key, agent_name in ai_agents:

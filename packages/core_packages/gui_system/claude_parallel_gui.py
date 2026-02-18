@@ -558,7 +558,7 @@ class ClaudeParallelGUI:
             # Format agent list
             agent_names = {
                 "claude_code": "Claude Code",
-                "pyautogen": "PyAutoGen",
+                "ag2": "PyAutoGen",
                 "vscode_agent": "VSCode Agent"
             }
             

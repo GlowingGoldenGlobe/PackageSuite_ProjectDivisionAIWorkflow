@@ -221,7 +221,7 @@ class AgentModeSelector:
         ttk.Radiobutton(mode_frame, text="Agent Mode", 
                        variable=execution_mode, value="agent_mode").pack(anchor="w", padx=5, pady=2)
         ttk.Radiobutton(mode_frame, text="PyAutoGen", 
-                       variable=execution_mode, value="pyautogen").pack(anchor="w", padx=5, pady=2)
+                       variable=execution_mode, value="ag2").pack(anchor="w", padx=5, pady=2)
         
         # Add execution style options (sequential vs parallel)
         style_frame = ttk.LabelFrame(mode_frame, text="Execution Style", padding=5)
